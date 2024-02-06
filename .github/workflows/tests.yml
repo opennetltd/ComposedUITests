@@ -31,8 +31,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: opennetltd/Composed
+          path: "../Composed"
 
-      - uses: actions/checkout@v4
+      - name: Checkout ComposedUITests
+        uses: actions/checkout@v4
 
       - name: Select Xcode ${{ matrix.xcode }}
         run: sudo xcode-select --switch /Applications/Xcode_${{ matrix.xcode }}.app
