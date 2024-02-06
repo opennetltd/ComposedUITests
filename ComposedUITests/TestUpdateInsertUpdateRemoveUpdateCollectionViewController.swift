@@ -40,7 +40,28 @@ final class TestUpdateInsertUpdateRemoveUpdateCollectionViewController: UICollec
         ])
         collectionCoordinator = CollectionCoordinator(collectionView: collectionView, sections: rootSection)
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply", style: .plain, target: self, action: #selector(applyUpdate))
+        if #available(iOS 14, *) {
+            let menu = UIMenu(
+                title: "Apply",
+                children: [
+                    UIAction(title: "All Updates", handler: { [unowned self] _ in
+                        self.applyUpdate()
+                    }),
+                    UIAction(title: "All Updates (omit final update)", handler: { [unowned self] _ in
+                        self.applyUpdateWithoutFinalUpdate()
+                    }),
+                    UIAction(title: "All Updates (omit final delete and update)", handler: { [unowned self] _ in
+                        self.applyUpdateWithoutFinalDeleteAndUpdate()
+                    }),
+                    UIAction(title: "All Updates (omit final deletes and update)", handler: { [unowned self] _ in
+                        self.applyUpdateWithoutFinalDeletesAndUpdate()
+                    }),
+                ]
+            )
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply...", menu: menu)
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply", style: .plain, target: self, action: #selector(applyUpdate))
+        }
     }
 
     @objc
@@ -61,12 +82,69 @@ final class TestUpdateInsertUpdateRemoveUpdateCollectionViewController: UICollec
             rootSection.remove(at: 14)
             // The below update will produce an invalid changeset, but it will only cause the wrong
             // cells to be refreshed.
-//            rootSection.remove(at: 13)
+            rootSection.remove(at: 13)
             // The below update will produce an invalid changeset, which will cause the collection
             // view to trigger a crash.
-//            rootSection.remove(at: 12)
+            rootSection.remove(at: 12)
             // We have never gotten this far...
-//            rootSection[10] = "Item 10 (updated)"
+            rootSection[10] = "Item 10 (updated)"
+        }
+    }
+
+    private func applyUpdateWithoutFinalUpdate() {
+        rootSection.performBatchUpdates { _ in
+            rootSection[1] = "Item 1 (updated)"
+            rootSection[2] = "Item 2 (updated)"
+            rootSection[3] = "Item 3 (updated)"
+            rootSection[4] = "Item 4 (updated)"
+            rootSection[5] = "Item 5 (updated)"
+            rootSection.insert("Item 6 (inserted)", at: 6)
+            rootSection.insert("Item 7 (inserted)", at: 7)
+            rootSection.insert("Item 8 (inserted)", at: 8)
+            rootSection.insert("Item 9 (inserted)", at: 9)
+            rootSection[0] = "Item 0 (updated)"
+            rootSection[11] = "Item 7 → 11 (updated)"
+            rootSection.remove(at: 15)
+            rootSection.remove(at: 14)
+            rootSection.remove(at: 13)
+            rootSection.remove(at: 12)
+        }
+    }
+
+    private func applyUpdateWithoutFinalDeleteAndUpdate() {
+        rootSection.performBatchUpdates { _ in
+            rootSection[1] = "Item 1 (updated)"
+            rootSection[2] = "Item 2 (updated)"
+            rootSection[3] = "Item 3 (updated)"
+            rootSection[4] = "Item 4 (updated)"
+            rootSection[5] = "Item 5 (updated)"
+            rootSection.insert("Item 6 (inserted)", at: 6)
+            rootSection.insert("Item 7 (inserted)", at: 7)
+            rootSection.insert("Item 8 (inserted)", at: 8)
+            rootSection.insert("Item 9 (inserted)", at: 9)
+            rootSection[0] = "Item 0 (updated)"
+            rootSection[11] = "Item 7 → 11 (updated)"
+            rootSection.remove(at: 15)
+            rootSection.remove(at: 14)
+            rootSection.remove(at: 13)
+        }
+    }
+
+    private func applyUpdateWithoutFinalDeletesAndUpdate() {
+        rootSection.performBatchUpdates { _ in
+            rootSection[1] = "Item 1 (updated)"
+            rootSection[2] = "Item 2 (updated)"
+            rootSection[3] = "Item 3 (updated)"
+            rootSection[4] = "Item 4 (updated)"
+            rootSection[5] = "Item 5 (updated)"
+            rootSection.insert("Item 6 (inserted)", at: 6)
+            rootSection.insert("Item 7 (inserted)", at: 7)
+            rootSection.insert("Item 8 (inserted)", at: 8)
+            rootSection.insert("Item 9 (inserted)", at: 9)
+            rootSection[0] = "Item 0 (updated)"
+            rootSection[11] = "Item 7 → 11 (updated)"
+            rootSection.remove(at: 15)
+            rootSection.remove(at: 14)
         }
     }
 }

@@ -13,7 +13,6 @@
 		D9928C212B717AFD00067EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9928C202B717AFD00067EA9 /* Assets.xcassets */; };
 		D9928C242B717AFD00067EA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9928C222B717AFD00067EA9 /* LaunchScreen.storyboard */; };
 		D9928C392B717AFD00067EA9 /* ComposedUITestsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C382B717AFD00067EA9 /* ComposedUITestsUITests.swift */; };
-		D9928C3B2B717AFD00067EA9 /* ComposedUITestsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C3A2B717AFD00067EA9 /* ComposedUITestsUITestsLaunchTests.swift */; };
 		D9928C4A2B717C5F00067EA9 /* Composed in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C492B717C5F00067EA9 /* Composed */; };
 		D9928C4C2B717C5F00067EA9 /* ComposedLayouts in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C4B2B717C5F00067EA9 /* ComposedLayouts */; };
 		D9928C4E2B717C5F00067EA9 /* ComposedUI in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C4D2B717C5F00067EA9 /* ComposedUI */; };
@@ -41,7 +40,6 @@
 		D9928C252B717AFD00067EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9928C342B717AFD00067EA9 /* ComposedUITestsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComposedUITestsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9928C382B717AFD00067EA9 /* ComposedUITestsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedUITestsUITests.swift; sourceTree = "<group>"; };
-		D9928C3A2B717AFD00067EA9 /* ComposedUITestsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedUITestsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D9928C472B717B8100067EA9 /* Composed */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Composed; path = ../Composed; sourceTree = "<group>"; };
 		D9928C4F2B71810300067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift; sourceTree = "<group>"; };
 		D9928C512B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				D9928C382B717AFD00067EA9 /* ComposedUITestsUITests.swift */,
-				D9928C3A2B717AFD00067EA9 /* ComposedUITestsUITestsLaunchTests.swift */,
 			);
 			path = ComposedUITestsUITests;
 			sourceTree = "<group>";
@@ -246,7 +243,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9928C3B2B717AFD00067EA9 /* ComposedUITestsUITestsLaunchTests.swift in Sources */,
 				D9928C392B717AFD00067EA9 /* ComposedUITestsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
