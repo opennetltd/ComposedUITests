@@ -1,0 +1,65 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+    branches:
+      - "**:**" # PRs from forks have a prefix with `owner:`
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  xcode_tests:
+    name: ${{ matrix.platform }} Tests (Xcode ${{ matrix.xcode }})
+    runs-on: macos-13
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - xcode: "14.2"
+            destination: "platform=iOS Simulator,name=iPhone 14,OS=16.2"
+          - xcode: "14.2"
+            destination: "platform=iOS Simulator,name=iPhone 14,OS=17.0"
+          - xcode: "15.2"
+            destination: "platform=iOS Simulator,name=iPhone 14,OS=17.2"
+
+    steps:
+      # Composed needs to be checked out alongside the tests repo.
+      - name: Checkout Composed
+        uses: actions/checkout@v4
+        with:
+          repository: opennetltd/Composed
+
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode ${{ matrix.xcode }}
+        run: sudo xcode-select --switch /Applications/Xcode_${{ matrix.xcode }}.app
+
+      - name: Install Mint
+        run: brew install mint
+
+      - name: Cache Mint
+        uses: actions/cache@v3
+        with:
+          path: ~/.mint
+          key: ${{ runner.os }}-mint-xcode_${{ matrix.xcode }}-${{ hashFiles('**/Mintfile') }}
+          restore-keys: |
+            ${{ runner.os }}-mint-xcode_${{ matrix.xcode }}
+
+      - run: mint bootstrap
+
+      - name: Cache DerivedData
+        uses: actions/cache@v3
+        with:
+          path: ~/Library/Developer/Xcode/DerivedData
+          key: ${{ runner.os }}-xcode_${{ matrix.xcode }}-derived_data-${{ github.ref }}
+          restore-keys: |
+            ${{ runner.os }}-xcode_${{ matrix.xcode }}-derived_data-main
+            ${{ runner.os }}-xcode_${{ matrix.xcode }}-derived_data-
+
+      - name: Run Tests
+        run: |
+          set -o pipefail
+          xcodebuild test -scheme ComposedUITests -destination '${{ matrix.destination }}' | $(mint which xcbeautify)
