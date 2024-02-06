@@ -50,6 +50,9 @@ final class TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual: UI
                     UIAction(title: "All Updates (omit final update)", handler: { [unowned self] _ in
                         self.applyUpdateWithoutFinalUpdate()
                     }),
+                    UIAction(title: "All Updates (omit final delete and update)", handler: { [unowned self] _ in
+                        self.applyUpdateWithoutFinalDeleteAndUpdate()
+                    }),
                     UIAction(title: "All Updates (omit final deletes and update)", handler: { [unowned self] _ in
                         self.applyUpdateWithoutFinalDeletesAndUpdate()
                     }),
@@ -127,7 +130,6 @@ final class TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual: UI
                 IndexPath(item: 10, section: 0),
                 IndexPath(item: 11, section: 0),
             ])
-            // TODO: Update 10
         }
     }
 
@@ -174,6 +176,50 @@ final class TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual: UI
         }
     }
 
+    private func applyUpdateWithoutFinalDeleteAndUpdate() {
+        collectionView.performBatchUpdates {
+            values = [
+                "Item 0 (updated)",
+                "Item 1 (updated)",
+                "Item 2 (updated)",
+                "Item 3 (updated)",
+                "Item 4 (updated)",
+                "Item 5 (updated)",
+
+                "Item 6 (inserted)",
+                "Item 7 (inserted)",
+                "Item 8 (inserted)",
+                "Item 9 (inserted)",
+
+                "Item 6 (original)",
+                "Item 7 → 11 (updated)",
+
+                "Item 8 (original)",
+            ]
+
+            collectionView.reloadItems(at: [
+                IndexPath(item: 0, section: 0),
+                IndexPath(item: 1, section: 0),
+                IndexPath(item: 2, section: 0),
+                IndexPath(item: 3, section: 0),
+                IndexPath(item: 4, section: 0),
+                IndexPath(item: 5, section: 0),
+                IndexPath(item: 7, section: 0),
+            ])
+            collectionView.insertItems(at: [
+                IndexPath(item: 6, section: 0),
+                IndexPath(item: 7, section: 0),
+                IndexPath(item: 8, section: 0),
+                IndexPath(item: 9, section: 0),
+            ])
+            collectionView.deleteItems(at: [
+                IndexPath(item: 9, section: 0),
+                IndexPath(item: 10, section: 0),
+                IndexPath(item: 11, section: 0),
+            ])
+        }
+    }
+
     private func applyUpdateWithoutFinalDeletesAndUpdate() {
         collectionView.performBatchUpdates {
             values = [
@@ -212,8 +258,8 @@ final class TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual: UI
                 IndexPath(item: 9, section: 0),
             ])
             collectionView.deleteItems(at: [
-                IndexPath(item: 8, section: 0),
-                IndexPath(item: 9, section: 0),
+                IndexPath(item: 10, section: 0),
+                IndexPath(item: 11, section: 0),
             ])
         }
     }
