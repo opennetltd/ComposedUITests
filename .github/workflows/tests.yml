@@ -56,5 +56,4 @@ jobs:
 
       - name: Run Tests
         run: |
-          set -o pipefail
-          xcodebuild test -scheme ComposedUITests -destination '${{ matrix.destination }}' | $(mint which xcbeautify)
+          set -o pipefail && xcodebuild test -scheme ComposedUITests -destination '${{ matrix.destination }}' 2>&1 | $(mint which xcbeautify)
