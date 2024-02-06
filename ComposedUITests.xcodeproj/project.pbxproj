@@ -13,11 +13,11 @@
 		D9928C212B717AFD00067EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9928C202B717AFD00067EA9 /* Assets.xcassets */; };
 		D9928C242B717AFD00067EA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9928C222B717AFD00067EA9 /* LaunchScreen.storyboard */; };
 		D9928C392B717AFD00067EA9 /* ComposedUITestsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C382B717AFD00067EA9 /* ComposedUITestsUITests.swift */; };
-		D9928C4A2B717C5F00067EA9 /* Composed in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C492B717C5F00067EA9 /* Composed */; };
-		D9928C4C2B717C5F00067EA9 /* ComposedLayouts in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C4B2B717C5F00067EA9 /* ComposedLayouts */; };
-		D9928C4E2B717C5F00067EA9 /* ComposedUI in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C4D2B717C5F00067EA9 /* ComposedUI */; };
 		D9928C502B71810300067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C4F2B71810300067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift */; };
 		D9928C522B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C512B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift */; };
+		D9928C582B72C24800067EA9 /* Composed in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C572B72C24800067EA9 /* Composed */; };
+		D9928C5A2B72C24800067EA9 /* ComposedLayouts in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C592B72C24800067EA9 /* ComposedLayouts */; };
+		D9928C5C2B72C24800067EA9 /* ComposedUI in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C5B2B72C24800067EA9 /* ComposedUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 		D9928C252B717AFD00067EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9928C342B717AFD00067EA9 /* ComposedUITestsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComposedUITestsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9928C382B717AFD00067EA9 /* ComposedUITestsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedUITestsUITests.swift; sourceTree = "<group>"; };
-		D9928C472B717B8100067EA9 /* Composed */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Composed; path = ../Composed; sourceTree = "<group>"; };
 		D9928C4F2B71810300067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift; sourceTree = "<group>"; };
 		D9928C512B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift; sourceTree = "<group>"; };
 		D9928C542B71B27300067EA9 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SampleCode.xcconfig; sourceTree = "<group>"; };
@@ -51,9 +50,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9928C4E2B717C5F00067EA9 /* ComposedUI in Frameworks */,
-				D9928C4C2B717C5F00067EA9 /* ComposedLayouts in Frameworks */,
-				D9928C4A2B717C5F00067EA9 /* Composed in Frameworks */,
+				D9928C5C2B72C24800067EA9 /* ComposedUI in Frameworks */,
+				D9928C5A2B72C24800067EA9 /* ComposedLayouts in Frameworks */,
+				D9928C582B72C24800067EA9 /* Composed in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +69,6 @@
 		D9928C0B2B717AFC00067EA9 = {
 			isa = PBXGroup;
 			children = (
-				D9928C472B717B8100067EA9 /* Composed */,
 				D9928C532B71B25E00067EA9 /* Configurations */,
 				D9928C162B717AFC00067EA9 /* ComposedUITests */,
 				D9928C372B717AFD00067EA9 /* ComposedUITestsUITests */,
@@ -143,9 +141,9 @@
 			);
 			name = ComposedUITests;
 			packageProductDependencies = (
-				D9928C492B717C5F00067EA9 /* Composed */,
-				D9928C4B2B717C5F00067EA9 /* ComposedLayouts */,
-				D9928C4D2B717C5F00067EA9 /* ComposedUI */,
+				D9928C572B72C24800067EA9 /* Composed */,
+				D9928C592B72C24800067EA9 /* ComposedLayouts */,
+				D9928C5B2B72C24800067EA9 /* ComposedUI */,
 			);
 			productName = ComposedUITests;
 			productReference = D9928C142B717AFC00067EA9 /* ComposedUITests.app */;
@@ -197,6 +195,9 @@
 				Base,
 			);
 			mainGroup = D9928C0B2B717AFC00067EA9;
+			packageReferences = (
+				D9928C562B72C24800067EA9 /* XCRemoteSwiftPackageReference "Composed" */,
+			);
 			productRefGroup = D9928C152B717AFC00067EA9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -505,17 +506,31 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		D9928C562B72C24800067EA9 /* XCRemoteSwiftPackageReference "Composed" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/opennetltd/Composed.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		D9928C492B717C5F00067EA9 /* Composed */ = {
+		D9928C572B72C24800067EA9 /* Composed */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = D9928C562B72C24800067EA9 /* XCRemoteSwiftPackageReference "Composed" */;
 			productName = Composed;
 		};
-		D9928C4B2B717C5F00067EA9 /* ComposedLayouts */ = {
+		D9928C592B72C24800067EA9 /* ComposedLayouts */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = D9928C562B72C24800067EA9 /* XCRemoteSwiftPackageReference "Composed" */;
 			productName = ComposedLayouts;
 		};
-		D9928C4D2B717C5F00067EA9 /* ComposedUI */ = {
+		D9928C5B2B72C24800067EA9 /* ComposedUI */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = D9928C562B72C24800067EA9 /* XCRemoteSwiftPackageReference "Composed" */;
 			productName = ComposedUI;
 		};
 /* End XCSwiftPackageProductDependency section */
