@@ -26,13 +26,6 @@ jobs:
             destination: "platform=iOS Simulator,name=iPhone 14,OS=17.2"
 
     steps:
-      # Composed needs to be checked out alongside the tests repo.
-      - name: Checkout Composed
-        uses: actions/checkout@v4
-        with:
-          repository: opennetltd/Composed
-          path: "../Composed"
-
       - name: Checkout ComposedUITests
         uses: actions/checkout@v4
 
