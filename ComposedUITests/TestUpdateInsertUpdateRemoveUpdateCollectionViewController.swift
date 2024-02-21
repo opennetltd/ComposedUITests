@@ -168,7 +168,7 @@ final class TestSection: ArraySection<String>, SingleUICollectionViewSection, Se
 
     func sizeForItem(at index: Int, suggested: CGSize, metrics: CollectionFlowLayoutMetrics, environment: CollectionFlowLayoutEnvironment) -> CGSize {
         var size = environment.collectionView.frame.size
-        size.height = 32
+        size.height = 36
         return size
     }
 }
