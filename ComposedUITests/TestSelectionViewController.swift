@@ -30,6 +30,22 @@ final class TestSelectionViewController: UICollectionViewController {
                 title: "[Manual] Update → Insert → Update → Remove → Update",
                 viewControllerFactory: TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual()
             ),
+            ComposedTest(
+                title: "[Composed] Remove, Remove Last, Reload Last",
+                viewControllerFactory: TestRemove_RemoveLast_ReloadLast_ViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Remove, Reload Last",
+                viewControllerFactory: TestRemove_ReloadLast_ViewController()
+            ),
+            ComposedTest(
+                title: "[Manual] Remove, Reload Last",
+                viewControllerFactory: TestRemoveReloadHandlingOrderCollectionViewControllerManual()
+            ),
+            ComposedTest(
+                title: "[Manual] Remove, Reconfigure Last",
+                viewControllerFactory: TestRemoveReconfigureHandlingOrderCollectionViewControllerManual()
+            ),
         ])
         rootSection.testSelectionHandler = { [unowned self] test in
             let viewController = test.viewControllerFactory()

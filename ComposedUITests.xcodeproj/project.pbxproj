@@ -18,6 +18,10 @@
 		D9928C582B72C24800067EA9 /* Composed in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C572B72C24800067EA9 /* Composed */; };
 		D9928C5A2B72C24800067EA9 /* ComposedLayouts in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C592B72C24800067EA9 /* ComposedLayouts */; };
 		D9928C5C2B72C24800067EA9 /* ComposedUI in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C5B2B72C24800067EA9 /* ComposedUI */; };
+		D99E251B2B7D30570013629B /* TestRemove_RemoveLast_ReloadLast_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E251A2B7D30570013629B /* TestRemove_RemoveLast_ReloadLast_ViewController.swift */; };
+		D99E251D2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E251C2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift */; };
+		D9AC7B262B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AC7B252B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift */; };
+		D9D759A62B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D759A52B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,10 @@
 		D9928C4F2B71810300067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift; sourceTree = "<group>"; };
 		D9928C512B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift; sourceTree = "<group>"; };
 		D9928C542B71B27300067EA9 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SampleCode.xcconfig; sourceTree = "<group>"; };
+		D99E251A2B7D30570013629B /* TestRemove_RemoveLast_ReloadLast_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemove_RemoveLast_ReloadLast_ViewController.swift; sourceTree = "<group>"; };
+		D99E251C2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift; sourceTree = "<group>"; };
+		D9AC7B252B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift; sourceTree = "<group>"; };
+		D9D759A52B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemove_ReloadLast_ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +100,7 @@
 				D9928C172B717AFC00067EA9 /* AppDelegate.swift */,
 				D9928C192B717AFC00067EA9 /* SceneDelegate.swift */,
 				D9928C1B2B717AFC00067EA9 /* TestSelectionViewController.swift */,
+				D9D759A42B86746200E31ABF /* Reload Last Items After Deletes */,
 				D9928C4F2B71810300067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift */,
 				D9928C512B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift */,
 				D9928C202B717AFD00067EA9 /* Assets.xcassets */,
@@ -122,6 +131,17 @@
 				D9928C542B71B27300067EA9 /* SampleCode.xcconfig */,
 			);
 			path = Configurations;
+			sourceTree = "<group>";
+		};
+		D9D759A42B86746200E31ABF /* Reload Last Items After Deletes */ = {
+			isa = PBXGroup;
+			children = (
+				D99E251A2B7D30570013629B /* TestRemove_RemoveLast_ReloadLast_ViewController.swift */,
+				D9D759A52B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift */,
+				D99E251C2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift */,
+				D9AC7B252B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift */,
+			);
+			path = "Reload Last Items After Deletes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,11 +252,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D759A62B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift in Sources */,
+				D9AC7B262B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift in Sources */,
 				D9928C522B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift in Sources */,
 				D9928C1C2B717AFC00067EA9 /* TestSelectionViewController.swift in Sources */,
+				D99E251D2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift in Sources */,
 				D9928C182B717AFC00067EA9 /* AppDelegate.swift in Sources */,
 				D9928C502B71810300067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift in Sources */,
 				D9928C1A2B717AFC00067EA9 /* SceneDelegate.swift in Sources */,
+				D99E251B2B7D30570013629B /* TestRemove_RemoveLast_ReloadLast_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +535,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/opennetltd/Composed.git";
 			requirement = {
-				branch = main;
+				branch = "fix-reload-after-item-deletes";
 				kind = branch;
 			};
 		};

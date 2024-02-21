@@ -7,8 +7,6 @@ final class ComposedUITestsUITests: XCTestCase {
     }
 
     func testComposedUpdateInsertUpdateRemoveUpdate_AllUpdates() throws {
-        XCTFail("This will crash")
-
         let app = XCUIApplication()
         app.launch()
 
@@ -41,8 +39,6 @@ final class ComposedUITestsUITests: XCTestCase {
     }
 
     func testComposedUpdateInsertUpdateRemoveUpdate_OmitFinalUpdate() throws {
-        XCTFail("This will crash")
-
         if #unavailable(iOS 14) {
             throw XCTSkip("This test requires iOS 14+")
         }
@@ -261,6 +257,94 @@ final class ComposedUITestsUITests: XCTestCase {
                 "[1] Item 7 → 11 (updated)",
                 "[1] Item 8 (original)",
                 "[1] Item 9 (original)",
+            ],
+            app: app
+        )
+    }
+
+    func testRemove_RemoveLast_ReloadLast_Composed() throws {
+        let app = XCUIApplication()
+        app.launch()
+
+        app.collectionViews.cells.staticTexts["[Composed] Remove, Remove Last, Reload Last"].tap()
+        app.navigationBars.firstMatch.buttons["Apply"].tap()
+
+        AssertDisplayingCells(
+            cellText: [
+                "[1] Item 0, 0 (original)",
+                "[1] Item 0, 1 (updated)",
+                "[1] Item 0, 3 → 0, 2 (updated)",
+            ],
+            app: app
+        )
+    }
+
+    func testRemove_ReloadLast_Composed() throws {
+        let app = XCUIApplication()
+        app.launch()
+
+        app.collectionViews.cells.staticTexts["[Composed] Remove, Reload Last"].tap()
+        app.navigationBars.firstMatch.buttons["Apply"].tap()
+
+        AssertDisplayingCells(
+            cellText: [
+                "[1] Item 0, 0 (original)",
+                "[1] Item 0, 3 → 0, 1 (updated)",
+                "[1] Item 0, 4 → 0, 2 (updated)",
+            ],
+            app: app
+        )
+    }
+
+    func testRemove_ReloadLast_Manual() throws {
+        let app = XCUIApplication()
+        app.launch()
+
+        app.collectionViews.cells.staticTexts["[Manual] Remove, Reload Last"].tap()
+        app.navigationBars.firstMatch.buttons["Apply"].tap()
+
+        // This validates that the bug was introduced in iOS 15 (which is when the reconfigure API
+        // was also introduced)
+        if #available(iOS 15, *) {
+            AssertDisplayingCells(
+                cellText: [
+                    "[1] Item 0, 0 (original)",
+                    "[1] Item 0, 1 (updated)",
+                    "[1] Item 0, 3 (original)",
+                ],
+                app: app
+            )
+        } else {
+            AssertDisplayingCells(
+                cellText: [
+                    "[1] Item 0, 0 (original)",
+                    "[1] Item 0, 1 (updated)",
+                    "[1] Item 0, 3 → 0, 2 (updated)",
+                ],
+                app: app
+            )
+        }
+    }
+
+    func testRemove_ReconfigureLast_Manual() throws {
+        if #unavailable(iOS 15) {
+            throw XCTSkip("This test requires iOS 15+")
+        }
+
+        let app = XCUIApplication()
+        app.launch()
+
+        app.collectionViews.cells.staticTexts["[Manual] Remove, Reconfigure Last"].tap()
+        app.navigationBars.firstMatch.buttons["Apply"].tap()
+
+        // This is not the outcome we want but validates the understanding of the API (that items
+        // reconfigured in a batch updates are updated immediately and do not account for other
+        // changes to the indexes).
+        AssertDisplayingCells(
+            cellText: [
+                "[1] Item 0, 0 (original)",
+                "[1] Item 0, 1 (updated)",
+                "[1] Item 0, 3 (original)",
             ],
             app: app
         )
