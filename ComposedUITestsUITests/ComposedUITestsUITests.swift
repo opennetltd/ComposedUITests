@@ -13,10 +13,10 @@ final class ComposedUITestsUITests: XCTestCase {
         app.collectionViews.cells.staticTexts["[Composed] Update → Insert → Update → Remove → Update"].tap()
 
         if #available(iOS 14, *) {
-            app.navigationBars["Update → Insert → Update → Remove → Update"].buttons["Apply..."].tap()
+            app.navigationBars.buttons["Apply..."].tap()
             app.buttons["All Updates"].tap()
         } else {
-            app.navigationBars["Update → Insert → Update → Remove → Update"].buttons["Apply"].tap()
+            app.navigationBars.buttons["Apply"].tap()
         }
 
         AssertDisplayingCells(
@@ -47,7 +47,7 @@ final class ComposedUITestsUITests: XCTestCase {
         app.launch()
 
         app.collectionViews.cells.staticTexts["[Composed] Update → Insert → Update → Remove → Update"].tap()
-        app.navigationBars["Update → Insert → Update → Remove → Update"].buttons["Apply..."].tap()
+        app.navigationBars.buttons["Apply..."].tap()
         app.buttons["All Updates (omit final update)"].tap()
 
         AssertDisplayingCells(
@@ -78,7 +78,7 @@ final class ComposedUITestsUITests: XCTestCase {
         app.launch()
 
         app.collectionViews.cells.staticTexts["[Composed] Update → Insert → Update → Remove → Update"].tap()
-        app.navigationBars["Update → Insert → Update → Remove → Update"].buttons["Apply..."].tap()
+        app.navigationBars.buttons["Apply..."].tap()
         app.buttons["All Updates (omit final delete and update)"].tap()
 
         AssertDisplayingCells(
@@ -110,7 +110,7 @@ final class ComposedUITestsUITests: XCTestCase {
         app.launch()
 
         app.collectionViews.cells.staticTexts["[Composed] Update → Insert → Update → Remove → Update"].tap()
-        app.navigationBars["Update → Insert → Update → Remove → Update"].buttons["Apply..."].tap()
+        app.navigationBars.buttons["Apply..."].tap()
         app.buttons["All Updates (omit final deletes and update)"].tap()
 
         AssertDisplayingCells(
@@ -141,10 +141,10 @@ final class ComposedUITestsUITests: XCTestCase {
         app.collectionViews.cells.staticTexts["[Manual] Update → Insert → Update → Remove → Update"].tap()
 
         if #available(iOS 14, *) {
-            app.navigationBars["Update → Insert → Update → Remove → Update"].buttons["Apply..."].tap()
+            app.navigationBars.buttons["Apply..."].tap()
             app.buttons["All Updates"].tap()
         } else {
-            app.navigationBars["Update → Insert → Update → Remove → Update"].buttons["Apply"].tap()
+            app.navigationBars.buttons["Apply"].tap()
         }
 
         AssertDisplayingCells(
@@ -175,7 +175,7 @@ final class ComposedUITestsUITests: XCTestCase {
         app.launch()
 
         app.collectionViews.cells.staticTexts["[Manual] Update → Insert → Update → Remove → Update"].tap()
-        app.navigationBars["Update → Insert → Update → Remove → Update"].buttons["Apply..."].tap()
+        app.navigationBars.buttons["Apply..."].tap()
         app.buttons["All Updates (omit final update)"].tap()
 
         AssertDisplayingCells(
@@ -206,7 +206,7 @@ final class ComposedUITestsUITests: XCTestCase {
         app.launch()
 
         app.collectionViews.cells.staticTexts["[Manual] Update → Insert → Update → Remove → Update"].tap()
-        app.navigationBars["Update → Insert → Update → Remove → Update"].buttons["Apply..."].tap()
+        app.navigationBars.buttons["Apply..."].tap()
         app.buttons["All Updates (omit final delete and update)"].tap()
 
         AssertDisplayingCells(
@@ -238,7 +238,7 @@ final class ComposedUITestsUITests: XCTestCase {
         app.launch()
 
         app.collectionViews.cells.staticTexts["[Manual] Update → Insert → Update → Remove → Update"].tap()
-        app.navigationBars["Update → Insert → Update → Remove → Update"].buttons["Apply..."].tap()
+        app.navigationBars.buttons["Apply..."].tap()
         app.buttons["All Updates (omit final deletes and update)"].tap()
 
         AssertDisplayingCells(
