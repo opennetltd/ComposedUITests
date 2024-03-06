@@ -87,7 +87,7 @@ final class TestUpdateInsertUpdateRemoveUpdateCollectionViewController: UICollec
             // view to trigger a crash.
             rootSection.remove(at: 12)
             // We have never gotten this far...
-            rootSection[10] = "Item 10 (updated)"
+            rootSection[10] = "Item 6 → 10 (updated)"
         }
     }
 
