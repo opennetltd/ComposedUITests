@@ -13,6 +13,11 @@ final class TestComposedSectionProvider: ComposedSectionProvider {
         }
     }
 
+    func insertItems(_ items: [String], at index: Int) {
+        let section = TestSection(elements: items)
+        insert(section, at: index)
+    }
+
     func append(testSection: TestSection) {
         append(testSection)
     }
@@ -23,7 +28,7 @@ final class TestComposedSectionProvider: ComposedSectionProvider {
 }
 
 /// The intergration test for `ChangesReduerTests.testUpdateElementsRemoveSection`.
-final class TestItemUpdatesWithSectionInsertsAndRemovals: UICollectionViewController {
+final class TestItemUpdatesWithSectionRemovals: UICollectionViewController {
     private typealias Step = () -> Void
 
     private var rootSection: TestComposedSectionProvider!
@@ -42,7 +47,7 @@ final class TestItemUpdatesWithSectionInsertsAndRemovals: UICollectionViewContro
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Item Reloads → Section Inserts/Removals"
+        title = "Item Reloads → Section Removals"
         collectionView.backgroundColor = .systemBackground
 
         rootSection = TestComposedSectionProvider(elements: [

@@ -31,8 +31,12 @@ final class TestSelectionViewController: UICollectionViewController {
                 viewControllerFactory: TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual()
             ),
             ComposedTest(
-                title: "[Composed] Item Reloads → Section Inserts/Removals",
-                viewControllerFactory: TestItemUpdatesWithSectionInsertsAndRemovals()
+                title: "[Composed] Item Reloads → Section Removals",
+                viewControllerFactory: TestItemUpdatesWithSectionRemovals()
+            ),
+            ComposedTest(
+                title: "[Composed] Item Reloads → Section Inserts",
+                viewControllerFactory: TestItemUpdatesWithSectionInserts()
             ),
             ComposedTest(
                 title: "[Composed] Remove, Remove Last, Reload Last",
