@@ -262,6 +262,139 @@ final class ComposedUITestsUITests: XCTestCase {
         )
     }
 
+    func testItemUpdatesWithSectionInsertsAndRemovals_1Update() throws {
+        if #unavailable(iOS 14) {
+            throw XCTSkip("This test requires iOS 14+")
+        }
+
+        let app = XCUIApplication()
+        app.launch()
+
+        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Inserts/Removals"].tap()
+        app.navigationBars.buttons["Apply..."].tap()
+        app.buttons["Apply First (1) update(s)"].tap()
+
+        AssertDisplayingCells(
+            cellText: [
+                "[1] Item 0, 0 (original)",
+                "[1] Item 0, 1 (original)",
+                "[1] Item 1, 0 (original)",
+                "[1] Item 1, 1 (original)",
+                "[1] Item 2, 0 (original)",
+                "[1] Item 2, 1 (updated)",
+                "[1] Item 3, 0 (original)",
+                "[1] Item 3, 1 (original)",
+                "[1] Item 4, 0 (original)",
+                "[1] Item 4, 1 (original)",
+            ],
+            app: app
+        )
+    }
+
+    func testItemUpdatesWithSectionInsertsAndRemovals_2Updates() throws {
+        if #unavailable(iOS 14) {
+            throw XCTSkip("This test requires iOS 14+")
+        }
+
+        let app = XCUIApplication()
+        app.launch()
+
+        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Inserts/Removals"].tap()
+        app.navigationBars.buttons["Apply..."].tap()
+        app.buttons["Apply First (2) update(s)"].tap()
+
+        AssertDisplayingCells(
+            cellText: [
+                "[1] Item 0, 0 (original)",
+                "[1] Item 0, 1 (original)",
+                "[1] Item 1, 0 (original)",
+                "[1] Item 1, 1 (original)",
+                "[1] Item 2, 0 (original)",
+                "[1] Item 2, 1 (updated)",
+                "[1] Item 3, 0 (original)",
+                "[1] Item 3, 1 (original)",
+                "[1] Item 4, 0 (updated)",
+                "[1] Item 4, 1 (original)",
+            ],
+            app: app
+        )
+    }
+
+    func testItemUpdatesWithSectionInsertsAndRemovals_3Updates() throws {
+        if #unavailable(iOS 14) {
+            throw XCTSkip("This test requires iOS 14+")
+        }
+
+        let app = XCUIApplication()
+        app.launch()
+
+        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Inserts/Removals"].tap()
+        app.navigationBars.buttons["Apply..."].tap()
+        app.buttons["Apply First (3) update(s)"].tap()
+
+        AssertDisplayingCells(
+            cellText: [
+                "[1] Item 0, 0 (original)",
+                "[1] Item 0, 1 (original)",
+                "[1] Item 2, 0 (original)",
+                "[1] Item 2, 1 (updated)",
+                "[1] Item 3, 0 (original)",
+                "[1] Item 3, 1 (original)",
+                "[1] Item 4, 0 (updated)",
+                "[1] Item 4, 1 (original)",
+            ],
+            app: app
+        )
+    }
+
+    func testItemUpdatesWithSectionInsertsAndRemovals_4Updates() throws {
+        if #unavailable(iOS 14) {
+            throw XCTSkip("This test requires iOS 14+")
+        }
+
+        let app = XCUIApplication()
+        app.launch()
+
+        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Inserts/Removals"].tap()
+        app.navigationBars.buttons["Apply..."].tap()
+        app.buttons["Apply First (4) update(s)"].tap()
+
+        AssertDisplayingCells(
+            cellText: [
+                "[1] Item 0, 0 (original)",
+                "[1] Item 0, 1 (original)",
+                "[1] Item 2, 0 (original)",
+                "[1] Item 2, 1 (updated)",
+                "[1] Item 4, 0 (updated)",
+                "[1] Item 4, 1 (original)",
+            ],
+            app: app
+        )
+    }
+
+    func testItemUpdatesWithSectionInsertsAndRemovals_AllUpdates() throws {
+        if #unavailable(iOS 14) {
+            throw XCTSkip("This test requires iOS 14+")
+        }
+
+        let app = XCUIApplication()
+        app.launch()
+
+        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Inserts/Removals"].tap()
+        app.navigationBars.buttons["Apply..."].tap()
+        app.buttons["Apply All Updates"].tap()
+
+        AssertDisplayingCells(
+            cellText: [
+                "[1] Item 0, 0 (original)",
+                "[1] Item 0, 1 (original)",
+                "[1] Item 4, 0 (updated)",
+                "[1] Item 4, 1 (original)",
+            ],
+            app: app
+        )
+    }
+
     func testRemove_RemoveLast_ReloadLast_Composed() throws {
         let app = XCUIApplication()
         app.launch()

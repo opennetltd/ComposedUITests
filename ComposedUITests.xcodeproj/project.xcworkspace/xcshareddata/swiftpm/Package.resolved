@@ -6,7 +6,7 @@
       "location" : "https://github.com/opennetltd/Composed.git",
       "state" : {
         "branch" : "fix-reload-after-item-deletes",
-        "revision" : "2de0335854ab18b1909d0d1141828118abf0e700"
+        "revision" : "20fbd51673ec4441d2c018c192ad1a1848f3f96b"
       }
     }
   ],

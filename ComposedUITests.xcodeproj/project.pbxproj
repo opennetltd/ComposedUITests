@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D94A53BC2B98AC3B002A9A85 /* TestItemUpdatesWithSectionInsertsAndRemovals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A53BB2B98A914002A9A85 /* TestItemUpdatesWithSectionInsertsAndRemovals.swift */; };
 		D9928C182B717AFC00067EA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C172B717AFC00067EA9 /* AppDelegate.swift */; };
 		D9928C1A2B717AFC00067EA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C192B717AFC00067EA9 /* SceneDelegate.swift */; };
 		D9928C1C2B717AFC00067EA9 /* TestSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C1B2B717AFC00067EA9 /* TestSelectionViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D94A53BB2B98A914002A9A85 /* TestItemUpdatesWithSectionInsertsAndRemovals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestItemUpdatesWithSectionInsertsAndRemovals.swift; sourceTree = "<group>"; };
 		D9928C142B717AFC00067EA9 /* ComposedUITests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComposedUITests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9928C172B717AFC00067EA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9928C192B717AFC00067EA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D94A53BA2B98A902002A9A85 /* Item Updates */ = {
+			isa = PBXGroup;
+			children = (
+				D94A53BB2B98A914002A9A85 /* TestItemUpdatesWithSectionInsertsAndRemovals.swift */,
+			);
+			path = "Item Updates";
+			sourceTree = "<group>";
+		};
 		D9928C0B2B717AFC00067EA9 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 				D9928C192B717AFC00067EA9 /* SceneDelegate.swift */,
 				D9928C1B2B717AFC00067EA9 /* TestSelectionViewController.swift */,
 				D9D759A42B86746200E31ABF /* Reload Last Items After Deletes */,
+				D94A53BA2B98A902002A9A85 /* Item Updates */,
 				D9928C4F2B71810300067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift */,
 				D9928C512B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift */,
 				D9928C202B717AFD00067EA9 /* Assets.xcassets */,
@@ -255,6 +266,7 @@
 				D9D759A62B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift in Sources */,
 				D9AC7B262B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift in Sources */,
 				D9928C522B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift in Sources */,
+				D94A53BC2B98AC3B002A9A85 /* TestItemUpdatesWithSectionInsertsAndRemovals.swift in Sources */,
 				D9928C1C2B717AFC00067EA9 /* TestSelectionViewController.swift in Sources */,
 				D99E251D2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift in Sources */,
 				D9928C182B717AFC00067EA9 /* AppDelegate.swift in Sources */,
