@@ -33,7 +33,7 @@
 			containerPortal = D9928C0C2B717AFC00067EA9 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D9928C132B717AFC00067EA9;
-			remoteInfo = ComposedUITests;
+			remoteInfo = ComposedIntegrationTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -182,7 +182,7 @@
 				D9928C592B72C24800067EA9 /* ComposedLayouts */,
 				D9928C5B2B72C24800067EA9 /* ComposedUI */,
 			);
-			productName = ComposedUITests;
+			productName = ComposedIntegrationTests;
 			productReference = D9928C142B717AFC00067EA9 /* ComposedIntegrationTests.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -200,7 +200,7 @@
 				D9928C362B717AFD00067EA9 /* PBXTargetDependency */,
 			);
 			name = ComposedIntegrationTestsUITests;
-			productName = ComposedUITestsUITests;
+			productName = ComposedIntegrationTestsUITests;
 			productReference = D9928C342B717AFD00067EA9 /* ComposedIntegrationTestsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
