@@ -1,6 +1,6 @@
 import XCTest
 
-final class ComposedUITestsUITests: XCTestCase {
+final class ComposedIntegrationTestsUITests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
         XCUIDevice.shared.orientation = .portrait

@@ -15,9 +15,23 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D9928C132B717AFC00067EA9"
-               BuildableName = "ComposedUITests.app"
-               BlueprintName = "ComposedUITests"
-               ReferencedContainer = "container:ComposedUITests.xcodeproj">
+               BuildableName = "ComposedIntegrationTests.app"
+               BlueprintName = "ComposedIntegrationTests"
+               ReferencedContainer = "container:ComposedIntegrationTests.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D9928C332B717AFD00067EA9"
+               BuildableName = "ComposedIntegrationTestsUITests.xctest"
+               BlueprintName = "ComposedIntegrationTestsUITests"
+               ReferencedContainer = "container:ComposedIntegrationTests.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,14 +43,13 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D9928C332B717AFD00067EA9"
-               BuildableName = "ComposedUITestsUITests.xctest"
-               BlueprintName = "ComposedUITestsUITests"
-               ReferencedContainer = "container:ComposedUITests.xcodeproj">
+               BuildableName = "ComposedIntegrationTestsUITests.xctest"
+               BlueprintName = "ComposedIntegrationTestsUITests"
+               ReferencedContainer = "container:ComposedIntegrationTests.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -56,17 +69,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D9928C132B717AFC00067EA9"
-            BuildableName = "ComposedUITests.app"
-            BlueprintName = "ComposedUITests"
-            ReferencedContainer = "container:ComposedUITests.xcodeproj">
+            BuildableName = "ComposedIntegrationTests.app"
+            BlueprintName = "ComposedIntegrationTests"
+            ReferencedContainer = "container:ComposedIntegrationTests.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-StartingTest &quot;[Manual] Delete Handling&quot;"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -79,9 +86,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D9928C132B717AFC00067EA9"
-            BuildableName = "ComposedUITests.app"
-            BlueprintName = "ComposedUITests"
-            ReferencedContainer = "container:ComposedUITests.xcodeproj">
+            BuildableName = "ComposedIntegrationTests.app"
+            BlueprintName = "ComposedIntegrationTests"
+            ReferencedContainer = "container:ComposedIntegrationTests.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
