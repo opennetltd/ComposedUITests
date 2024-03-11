@@ -66,4 +66,4 @@ jobs:
 
       - name: Run Tests
         run: |
-          set -o pipefail && xcodebuild test -scheme ComposedIntegrationTests -destination '${{ matrix.destination }}' 2>&1 | $(mint which xcbeautify) --renderer github-actions
+          set -o pipefail && xcodebuild test -verbose -scheme ComposedIntegrationTests -destination '${{ matrix.destination }}' 2>&1 | $(mint which xcbeautify) --renderer github-actions
