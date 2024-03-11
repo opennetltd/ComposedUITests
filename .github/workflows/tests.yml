@@ -5,6 +5,12 @@ on:
   pull_request:
     branches:
       - "**:**" # PRs from forks have a prefix with `owner:`
+  workflow_dispatch:
+    inputs:
+      revision:
+        description: "Git revision of Composed to use"
+        required: true
+        type: string
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -53,6 +59,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-xcode_${{ matrix.xcode }}-derived_data-main
             ${{ runner.os }}-xcode_${{ matrix.xcode }}-derived_data-
+
+      - name: Set Composed Revision
+        if: inputs.revision != ''
+        run: ./scripts/set-composed-version.sh ./ComposedDependant/ "${{ inputs.revision }}"
 
       - name: Run Tests
         run: |
