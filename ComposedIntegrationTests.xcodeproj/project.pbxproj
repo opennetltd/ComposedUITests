@@ -24,6 +24,7 @@
 		D99E251D2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E251C2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift */; };
 		D9AC7B262B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AC7B252B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift */; };
 		D9D112902B9F1685006BA8A2 /* ComposedIntegrationTestsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C382B717AFD00067EA9 /* ComposedIntegrationTestsUITests.swift */; };
+		D9D112932B9F180E006BA8A2 /* ComposedDependant in Frameworks */ = {isa = PBXBuildFile; productRef = D9D112922B9F180E006BA8A2 /* ComposedDependant */; };
 		D9D759A62B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D759A52B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		D99E251A2B7D30570013629B /* TestRemove_RemoveLast_ReloadLast_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemove_RemoveLast_ReloadLast_ViewController.swift; sourceTree = "<group>"; };
 		D99E251C2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift; sourceTree = "<group>"; };
 		D9AC7B252B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift; sourceTree = "<group>"; };
+		D9D112912B9F1786006BA8A2 /* ComposedDependant */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ComposedDependant; sourceTree = "<group>"; };
 		D9D759A52B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemove_ReloadLast_ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +69,7 @@
 			files = (
 				D9928C5C2B72C24800067EA9 /* ComposedUI in Frameworks */,
 				D9928C5A2B72C24800067EA9 /* ComposedLayouts in Frameworks */,
+				D9D112932B9F180E006BA8A2 /* ComposedDependant in Frameworks */,
 				D9928C582B72C24800067EA9 /* Composed in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +101,7 @@
 				D9928C532B71B25E00067EA9 /* Configurations */,
 				D9928C162B717AFC00067EA9 /* ComposedIntegrationTests */,
 				D9928C372B717AFD00067EA9 /* ComposedIntegrationTestsUITests */,
+				D9D112912B9F1786006BA8A2 /* ComposedDependant */,
 				D9928C152B717AFC00067EA9 /* Products */,
 				D9928C482B717C5F00067EA9 /* Frameworks */,
 			);
@@ -183,6 +187,7 @@
 				D9928C572B72C24800067EA9 /* Composed */,
 				D9928C592B72C24800067EA9 /* ComposedLayouts */,
 				D9928C5B2B72C24800067EA9 /* ComposedUI */,
+				D9D112922B9F180E006BA8A2 /* ComposedDependant */,
 			);
 			productName = ComposedIntegrationTests;
 			productReference = D9928C142B717AFC00067EA9 /* ComposedIntegrationTests.app */;
@@ -570,8 +575,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/opennetltd/Composed.git";
 			requirement = {
-				branch = "fix-reload-after-item-deletes";
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -591,6 +596,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D9928C562B72C24800067EA9 /* XCRemoteSwiftPackageReference "Composed" */;
 			productName = ComposedUI;
+		};
+		D9D112922B9F180E006BA8A2 /* ComposedDependant */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ComposedDependant;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
