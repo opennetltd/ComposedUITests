@@ -30,12 +30,50 @@ final class TestSelectionViewController: UICollectionViewController {
                 title: "[Manual] Update → Insert → Update → Remove → Update",
                 viewControllerFactory: TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual()
             ),
+            ComposedTest(
+                title: "[Composed] Item Reloads → Section Removals",
+                viewControllerFactory: TestItemUpdatesWithSectionRemovals()
+            ),
+            ComposedTest(
+                title: "[Composed] Item Reloads → Section Inserts",
+                viewControllerFactory: TestItemUpdatesWithSectionInserts()
+            ),
+            ComposedTest(
+                title: "[Composed] Item Reloads → Section Removals and Inserts",
+                viewControllerFactory: TestItemUpdatesWithSectionRemovalsAndInserts()
+            ),
+            ComposedTest(
+                title: "[Composed] Remove, Remove Last, Reload Last",
+                viewControllerFactory: TestRemove_RemoveLast_ReloadLast_ViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Remove, Reload Last",
+                viewControllerFactory: TestRemove_ReloadLast_ViewController()
+            ),
+            ComposedTest(
+                title: "[Manual] Remove, Reload Last",
+                viewControllerFactory: TestRemoveReloadHandlingOrderCollectionViewControllerManual()
+            ),
+            ComposedTest(
+                title: "[Manual] Remove, Reconfigure Last",
+                viewControllerFactory: TestRemoveReconfigureHandlingOrderCollectionViewControllerManual()
+            ),
         ])
         rootSection.testSelectionHandler = { [unowned self] test in
             let viewController = test.viewControllerFactory()
             self.navigationController?.pushViewController(viewController, animated: true)
         }
         collectionCoordinator = CollectionCoordinator(collectionView: collectionView, sections: rootSection)
+
+        print(UserDefaults.standard.dictionaryRepresentation())
+
+        // "StartingTest" is passed as an argument so use UserDefaults to parse it.
+        if let startingTestTitle = UserDefaults.standard.string(forKey: "StartingTest") {
+            if let test = rootSection.elements.first(where: { $0.title == startingTestTitle }) {
+                let viewController = test.viewControllerFactory()
+                navigationController?.pushViewController(viewController, animated: false)
+            }
+        }
     }
 }
 
@@ -56,7 +94,7 @@ private final class ComposedTestsSection: ArraySection<ComposedTest>, SingleUICo
 
     func sizeForItem(at index: Int, suggested: CGSize, metrics: CollectionFlowLayoutMetrics, environment: CollectionFlowLayoutEnvironment) -> CGSize {
         var size = environment.collectionView.frame.size
-        size.height = 32
+        size.height = 36
         return size
     }
 
@@ -98,10 +136,10 @@ final class LabeledCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            label.topAnchor.constraint(equalTo: contentView.topAnchor),
-            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            label.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
         ])
     }
 }

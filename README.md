@@ -1,4 +1,4 @@
-# ComposedUITests
+# ComposedIntegrationTests
 
 This project contains an app that includes various UI tests used to validate the implementation of [Composed](https://github.com/opennetltd/Composed).
 
