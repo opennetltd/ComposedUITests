@@ -20,20 +20,6 @@
                ReferencedContainer = "container:ComposedIntegrationTests.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D9928C332B717AFD00067EA9"
-               BuildableName = "ComposedIntegrationTestsUITests.xctest"
-               BlueprintName = "ComposedIntegrationTestsUITests"
-               ReferencedContainer = "container:ComposedIntegrationTests.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -43,10 +29,11 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D9928C332B717AFD00067EA9"
+               BlueprintIdentifier = "D99A038E2B9F13550022FA1E"
                BuildableName = "ComposedIntegrationTestsUITests.xctest"
                BlueprintName = "ComposedIntegrationTestsUITests"
                ReferencedContainer = "container:ComposedIntegrationTests.xcodeproj">
