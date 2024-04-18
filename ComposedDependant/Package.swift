@@ -10,7 +10,7 @@ let package = Package(
         .library( name: "ComposedDependant", targets: ["ComposedDependant"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/opennetltd/Composed.git", branch: "fix-reload-after-item-deletes"),
+        .package(url: "https://github.com/opennetltd/Composed.git", from: "2.0.0-beta.2"),
     ],
     targets: [
         .target(

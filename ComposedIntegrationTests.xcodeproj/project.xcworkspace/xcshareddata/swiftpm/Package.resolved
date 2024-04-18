@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/opennetltd/Composed.git",
       "state" : {
-        "branch" : "fix-reload-after-item-deletes",
-        "revision" : "56a6b2e803099399367c4d296b1b49bba1b6ede0"
+        "revision" : "694c835af89f4a9ba7e1c35132420a114b949b76",
+        "version" : "2.0.0-beta.2"
       }
     }
   ],
