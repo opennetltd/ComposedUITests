@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/opennetltd/Composed.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "491bb72f54b833605298a2eb14122a529bbe3c36"
+        "revision" : "694c835af89f4a9ba7e1c35132420a114b949b76",
+        "version" : "2.0.0-beta.2"
       }
     }
   ],

@@ -5,6 +5,12 @@ on:
   pull_request:
     branches:
       - "**:**" # PRs from forks have a prefix with `owner:`
+  workflow_dispatch:
+    inputs:
+      revision:
+        description: "Git revision of Composed to use"
+        required: true
+        type: string
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -20,13 +26,13 @@ jobs:
         include:
           - xcode: "14.2"
             destination: "platform=iOS Simulator,name=iPhone 14,OS=16.2"
-          - xcode: "14.2"
-            destination: "platform=iOS Simulator,name=iPhone 14,OS=17.0.1"
           - xcode: "15.2"
-            destination: "platform=iOS Simulator,name=iPhone 14,OS=17.2"
+            destination: "platform=iOS Simulator,name=iPhone 15,OS=17.0.1"
+          - xcode: "15.2"
+            destination: "platform=iOS Simulator,name=iPhone 15,OS=17.2"
 
     steps:
-      - name: Checkout ComposedUITests
+      - name: Checkout ComposedIntegrationTests
         uses: actions/checkout@v4
 
       - name: Select Xcode ${{ matrix.xcode }}
@@ -54,6 +60,10 @@ jobs:
             ${{ runner.os }}-xcode_${{ matrix.xcode }}-derived_data-main
             ${{ runner.os }}-xcode_${{ matrix.xcode }}-derived_data-
 
+      - name: Set Composed Revision
+        if: inputs.revision != ''
+        run: ./scripts/set-composed-version.sh ./ComposedDependant/ "${{ inputs.revision }}"
+
       - name: Run Tests
         run: |
-          set -o pipefail && xcodebuild test -scheme ComposedUITests -destination '${{ matrix.destination }}' 2>&1 | $(mint which xcbeautify) --renderer github-actions
+          set -o pipefail && xcodebuild test -verbose -scheme ComposedIntegrationTests -destination '${{ matrix.destination }}' 2>&1 | $(mint which xcbeautify) --renderer github-actions
