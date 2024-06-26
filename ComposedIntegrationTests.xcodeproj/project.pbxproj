@@ -25,6 +25,7 @@
 		D9AC7B262B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AC7B252B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift */; };
 		D9D112902B9F1685006BA8A2 /* ComposedIntegrationTestsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C382B717AFD00067EA9 /* ComposedIntegrationTestsUITests.swift */; };
 		D9D112932B9F180E006BA8A2 /* ComposedDependant in Frameworks */ = {isa = PBXBuildFile; productRef = D9D112922B9F180E006BA8A2 /* ComposedDependant */; };
+		D9D50CB52C28A0CE008DA99D /* TestReloadHeaderCompositionalLayoutDuringBatchUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D50CB42C28A0CE008DA99D /* TestReloadHeaderCompositionalLayoutDuringBatchUpdates.swift */; };
 		D9D759A62B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D759A52B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		D99E251C2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift; sourceTree = "<group>"; };
 		D9AC7B252B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift; sourceTree = "<group>"; };
 		D9D112912B9F1786006BA8A2 /* ComposedDependant */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ComposedDependant; sourceTree = "<group>"; };
+		D9D50CB42C28A0CE008DA99D /* TestReloadHeaderCompositionalLayoutDuringBatchUpdates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReloadHeaderCompositionalLayoutDuringBatchUpdates.swift; sourceTree = "<group>"; };
 		D9D759A52B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemove_ReloadLast_ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 				D9928C172B717AFC00067EA9 /* AppDelegate.swift */,
 				D9928C192B717AFC00067EA9 /* SceneDelegate.swift */,
 				D9928C1B2B717AFC00067EA9 /* TestSelectionViewController.swift */,
+				D9D50CB32C28A0A8008DA99D /* Compositional Layout */,
 				D9D759A42B86746200E31ABF /* Reload Last Items After Deletes */,
 				D94A53BA2B98A902002A9A85 /* Item Updates */,
 				D9928C4F2B71810300067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift */,
@@ -154,6 +157,14 @@
 				D9928C542B71B27300067EA9 /* SampleCode.xcconfig */,
 			);
 			path = Configurations;
+			sourceTree = "<group>";
+		};
+		D9D50CB32C28A0A8008DA99D /* Compositional Layout */ = {
+			isa = PBXGroup;
+			children = (
+				D9D50CB42C28A0CE008DA99D /* TestReloadHeaderCompositionalLayoutDuringBatchUpdates.swift */,
+			);
+			path = "Compositional Layout";
 			sourceTree = "<group>";
 		};
 		D9D759A42B86746200E31ABF /* Reload Last Items After Deletes */ = {
@@ -278,6 +289,7 @@
 			files = (
 				D9D759A62B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift in Sources */,
 				D9AC7B262B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift in Sources */,
+				D9D50CB52C28A0CE008DA99D /* TestReloadHeaderCompositionalLayoutDuringBatchUpdates.swift in Sources */,
 				D9928C522B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift in Sources */,
 				D94A53BC2B98AC3B002A9A85 /* TestItemUpdatesWithSectionRemovals.swift in Sources */,
 				D94A53BF2B98C7AA002A9A85 /* TestItemUpdatesWithSectionInserts.swift in Sources */,

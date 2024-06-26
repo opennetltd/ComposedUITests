@@ -23,6 +23,10 @@ final class TestSelectionViewController: UICollectionViewController {
 
         let rootSection = ComposedTestsSection(elements: [
             ComposedTest(
+                title: "[Compositional] Reload Header During Batch Updates",
+                viewControllerFactory: TestReloadHeaderCompositionalLayoutDuringBatchUpdates()
+            ),
+            ComposedTest(
                 title: "[Composed] Update → Insert → Update → Remove → Update",
                 viewControllerFactory: TestUpdateInsertUpdateRemoveUpdateCollectionViewController()
             ),
