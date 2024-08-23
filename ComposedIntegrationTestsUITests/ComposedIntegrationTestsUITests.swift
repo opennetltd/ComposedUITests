@@ -12,12 +12,8 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
         app.collectionViews.cells.staticTexts["[Composed] Update → Insert → Update → Remove → Update"].tap()
 
-        if #available(iOS 14, *) {
-            app.navigationBars.buttons["Apply..."].tap()
-            app.buttons["All Updates"].tap()
-        } else {
-            app.navigationBars.buttons["Apply"].tap()
-        }
+        app.navigationBars.buttons["Apply..."].tap()
+        app.buttons["All Updates"].tap()
 
         AssertDisplayingCells(
             cellText: [
@@ -39,10 +35,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testComposedUpdateInsertUpdateRemoveUpdate_OmitFinalUpdate() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -70,10 +62,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testComposedUpdateInsertUpdateRemoveUpdate_OmitFinalDeleteAndUpdate() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -102,10 +90,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testComposedUpdateInsertUpdateRemoveUpdate_OmitFinalDeletesAndUpdate() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -140,12 +124,8 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
         app.collectionViews.cells.staticTexts["[Manual] Update → Insert → Update → Remove → Update"].tap()
 
-        if #available(iOS 14, *) {
-            app.navigationBars.buttons["Apply..."].tap()
-            app.buttons["All Updates"].tap()
-        } else {
-            app.navigationBars.buttons["Apply"].tap()
-        }
+        app.navigationBars.buttons["Apply..."].tap()
+        app.buttons["All Updates"].tap()
 
         AssertDisplayingCells(
             cellText: [
@@ -167,10 +147,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testManualUpdateInsertUpdateRemoveUpdate_OmitFinalUpdate() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -198,10 +174,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testManualUpdateInsertUpdateRemoveUpdate_OmitFinalDeleteAndUpdate() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -230,10 +202,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testManualUpdateInsertUpdateRemoveUpdate_OmitFinalDeletesAndUpdate() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -263,10 +231,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testItemUpdatesWithSectionRemovals_1Update() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -292,10 +256,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testItemUpdatesWithSectionRemovals_2Updates() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -321,10 +281,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testItemUpdatesWithSectionRemovals_3Updates() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -348,10 +304,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testItemUpdatesWithSectionRemovals_4Updates() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -373,10 +325,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testItemUpdatesWithSectionRemovals_AllUpdates() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -396,10 +344,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testItemUpdatesWithSectionInserts_1Update() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -421,10 +365,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testItemUpdatesWithSectionInserts_2Updates() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -446,10 +386,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testItemUpdatesWithSectionInserts_3Updates() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -473,10 +409,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testItemUpdatesWithSectionInserts_4Updates() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -502,10 +434,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testItemUpdatesWithSectionInserts_5Updates() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
@@ -533,10 +461,6 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
     }
 
     func testItemUpdatesWithSectionInserts_AllUpdates() throws {
-        if #unavailable(iOS 14) {
-            throw XCTSkip("This test requires iOS 14+")
-        }
-
         let app = XCUIApplication()
         app.launch()
 
