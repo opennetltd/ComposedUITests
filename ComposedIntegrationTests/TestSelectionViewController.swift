@@ -69,8 +69,6 @@ final class TestSelectionViewController: UICollectionViewController {
         }
         collectionCoordinator = CollectionCoordinator(collectionView: collectionView, sections: rootSection)
 
-        print(UserDefaults.standard.dictionaryRepresentation())
-
         // "StartingTest" is passed as an argument so use UserDefaults to parse it.
         if let startingTestTitle = UserDefaults.standard.string(forKey: "StartingTest") {
             if let test = rootSection.elements.first(where: { $0.title == startingTestTitle }) {
