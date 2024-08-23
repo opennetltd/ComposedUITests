@@ -84,28 +84,24 @@ final class TestItemUpdatesWithSectionRemovalsAndInserts: UICollectionViewContro
             },
         ]
 
-        if #available(iOS 14, *) {
-            let menuAction = Array((1 ... steps.count).reversed()).enumerated().map { (index, stepCount) in
-                let isFirst = index == 0
+        let menuAction = Array((1 ... steps.count).reversed()).enumerated().map { (index, stepCount) in
+            let isFirst = index == 0
 
-                if isFirst {
-                    return UIAction(title: "Apply All Updates", handler: { [unowned self] _ in
-                        self.applyAllUpdates()
-                    })
-                } else {
-                    return UIAction(title: "Apply First (\(stepCount)) update(s)", handler: { [unowned self] _ in
-                        self.applyFirstUpdates(updateCount: stepCount)
-                    })
-                }
+            if isFirst {
+                return UIAction(title: "Apply All Updates", handler: { [unowned self] _ in
+                    self.applyAllUpdates()
+                })
+            } else {
+                return UIAction(title: "Apply First (\(stepCount)) update(s)", handler: { [unowned self] _ in
+                    self.applyFirstUpdates(updateCount: stepCount)
+                })
             }
-            let menu = UIMenu(
-                title: "Apply",
-                children: menuAction
-            )
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply...", menu: menu)
-        } else {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply", style: .plain, target: self, action: #selector(applyAllUpdates))
         }
+        let menu = UIMenu(
+            title: "Apply",
+            children: menuAction
+        )
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply...", menu: menu)
     }
 
     private func applyFirstUpdates(updateCount: Int) {
@@ -116,7 +112,6 @@ final class TestItemUpdatesWithSectionRemovalsAndInserts: UICollectionViewContro
         }
     }
 
-    @objc
     private func applyAllUpdates() {
         applyFirstUpdates(updateCount: steps.count)
     }

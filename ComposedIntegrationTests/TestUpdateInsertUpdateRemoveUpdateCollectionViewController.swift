@@ -40,31 +40,26 @@ final class TestUpdateInsertUpdateRemoveUpdateCollectionViewController: UICollec
         ])
         collectionCoordinator = CollectionCoordinator(collectionView: collectionView, sections: rootSection)
 
-        if #available(iOS 14, *) {
-            let menu = UIMenu(
-                title: "Apply",
-                children: [
-                    UIAction(title: "All Updates", handler: { [unowned self] _ in
-                        self.applyUpdate()
-                    }),
-                    UIAction(title: "All Updates (omit final update)", handler: { [unowned self] _ in
-                        self.applyUpdateWithoutFinalUpdate()
-                    }),
-                    UIAction(title: "All Updates (omit final delete and update)", handler: { [unowned self] _ in
-                        self.applyUpdateWithoutFinalDeleteAndUpdate()
-                    }),
-                    UIAction(title: "All Updates (omit final deletes and update)", handler: { [unowned self] _ in
-                        self.applyUpdateWithoutFinalDeletesAndUpdate()
-                    }),
-                ]
-            )
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply...", menu: menu)
-        } else {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply", style: .plain, target: self, action: #selector(applyUpdate))
-        }
+        let menu = UIMenu(
+            title: "Apply",
+            children: [
+                UIAction(title: "All Updates", handler: { [unowned self] _ in
+                    self.applyUpdate()
+                }),
+                UIAction(title: "All Updates (omit final update)", handler: { [unowned self] _ in
+                    self.applyUpdateWithoutFinalUpdate()
+                }),
+                UIAction(title: "All Updates (omit final delete and update)", handler: { [unowned self] _ in
+                    self.applyUpdateWithoutFinalDeleteAndUpdate()
+                }),
+                UIAction(title: "All Updates (omit final deletes and update)", handler: { [unowned self] _ in
+                    self.applyUpdateWithoutFinalDeletesAndUpdate()
+                }),
+            ]
+        )
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply...", menu: menu)
     }
 
-    @objc
     private func applyUpdate() {
         rootSection.performBatchUpdates { _ in
             rootSection[1] = "Item 1 (updated)"
