@@ -105,7 +105,29 @@ final class TestReloadHeaderCompositionalLayoutDuringBatchUpdates: UICollectionV
         collectionView.register(LabeledCollectionViewCell.self, forCellWithReuseIdentifier: "LabeledCollectionViewCell")
         collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderView")
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Apply", style: .plain, target: self, action: #selector(applyUpdate_working))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Tests...",
+            menu: UIMenu(children: [
+                UIAction(title: "✅ Reconfigure Header in Separate Batch", handler: { [unowned self] _ in
+                    self.applyUpdate_reconfigureInSeparateBatch()
+                }),
+                UIAction(title: "⚠️ Invalidate Header in Separate Batch", handler: { [unowned self] _ in
+                    self.applyUpdate_invalidateInSeparateBatch()
+                }),
+                UIAction(title: "💥 Invalidate Header Using Before Index", handler: { [unowned self] _ in
+                    self.applyUpdate_invalidateHeaderAtBeforeIndex()
+                }),
+                UIAction(title: "💥 Invalidate Header Using After Index", handler: { [unowned self] _ in
+                    self.applyUpdate_invalidateHeaderAtAfterIndex()
+                }),
+                UIAction(title: "⚠️ Reconfigure Header Using Before Index", handler: { [unowned self] _ in
+                    self.applyUpdate_configureHeaderWithIndexBeforeUpdates()
+                }),
+                UIAction(title: "⚠️ Reconfigure Header Using After Index", handler: { [unowned self] _ in
+                    self.applyUpdate_configureHeaderWithIndexAfterUpdates()
+                }),
+            ])
+        )
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -149,8 +171,7 @@ final class TestReloadHeaderCompositionalLayoutDuringBatchUpdates: UICollectionV
         view.label.text = headers[section]?.text
     }
 
-    @objc
-    private func applyUpdate_working() {
+    private func applyUpdate_reconfigureInSeparateBatch() {
         collectionView.performBatchUpdates {
             headers = [
                 0: (30, "Section 1 -> 0 (updated)"),
@@ -164,10 +185,44 @@ final class TestReloadHeaderCompositionalLayoutDuringBatchUpdates: UICollectionV
         }
     }
 
+    private func applyUpdate_invalidateInSeparateBatch() {
+        collectionView.performBatchUpdates {
+            headers = [
+                0: (30, "Section 1 -> 0 (updated)"),
+            ]
+
+            values = [values[1]]
+            collectionView.deleteSections([0, 2, 3, 4])
+        }
+        collectionView.performBatchUpdates {
+            // This does not crash, but it's another example that invalidating the layout of a
+            // supplementary view does not cause it to be reconfigured.
+            let context = UICollectionViewLayoutInvalidationContext()
+            context.invalidateSupplementaryElements(ofKind: UICollectionView.elementKindSectionHeader, at: [IndexPath(item: 0, section: 0)])
+            collectionView.collectionViewLayout.invalidateLayout(with: context)
+        }
+    }
+
     /// When invalidating the layout during the batch updates it will crash if other updates are
-    /// also applied. This does **NOT** happen when a flow layout.
-    @objc
-    private func applyUpdate_crash() {
+    /// also applied. This does **NOT** happen with a flow layout.
+    private func applyUpdate_invalidateHeaderAtBeforeIndex() {
+        collectionView.performBatchUpdates {
+            headers = [
+                0: (30, "Section 1 -> 0 (updated)"),
+            ]
+
+            values = [values[1]]
+            collectionView.deleteSections([0, 2, 3, 4])
+
+            let context = UICollectionViewLayoutInvalidationContext()
+            context.invalidateSupplementaryElements(ofKind: UICollectionView.elementKindSectionHeader, at: [IndexPath(item: 0, section: 0)])
+            collectionView.collectionViewLayout.invalidateLayout(with: context)
+        }
+    }
+
+    /// When invalidating the layout during the batch updates it will crash if other updates are
+    /// also applied. This does **NOT** happen with a flow layout.
+    private func applyUpdate_invalidateHeaderAtAfterIndex() {
         collectionView.performBatchUpdates {
             headers = [
                 0: (30, "Section 1 -> 0 (updated)"),
@@ -182,8 +237,7 @@ final class TestReloadHeaderCompositionalLayoutDuringBatchUpdates: UICollectionV
         }
     }
 
-    @objc
-    private func applyUpdate_wrongHeader() {
+    private func applyUpdate_configureHeaderWithIndexBeforeUpdates() {
         collectionView.performBatchUpdates {
             headers = [
                 0: (30, "Section 1 -> 0 (updated)"),
@@ -192,10 +246,24 @@ final class TestReloadHeaderCompositionalLayoutDuringBatchUpdates: UICollectionV
             values = [values[1]]
             collectionView.deleteSections([0, 2, 3, 4])
 
-            // This uses the index before the update so index 1 results in a blank header and index
-            // 0 results in the original header having the right contents but then removed.
+            // This uses the index before the update and results in the original header having the
+            // right contents but then being removed. Remove `UIView.setAnimationsEnabled(false)`
+            // from SceneDelegate.swift and enable Slow Animations to see this better.
             reconfigureHeaderForSection(0)
-//            reconfigureHeaderForSection(1)
+        }
+    }
+
+    private func applyUpdate_configureHeaderWithIndexAfterUpdates() {
+        collectionView.performBatchUpdates {
+            headers = [
+                0: (30, "Section 1 -> 0 (updated)"),
+            ]
+
+            values = [values[1]]
+            collectionView.deleteSections([0, 2, 3, 4])
+
+            // This uses the index after the update so section 0 has a blank header
+            reconfigureHeaderForSection(1)
         }
     }
 }
