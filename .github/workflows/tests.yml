@@ -89,10 +89,11 @@ jobs:
 
       - name: Checkout Composed
         uses: actions/checkout@v7
+        if: inputs.revision != ''
         with:
           repository: opennetltd/Composed
           path: Composed
-          ref: ${{ inputs.revision || 'performance-improvements' }}
+          ref: ${{ inputs.revision }}
 
       - name: Select Xcode ${{ matrix.xcode }}
         run: sudo xcode-select --switch "/Applications/Xcode_${{ matrix.xcode }}.app"
