@@ -1,14 +1,15 @@
 {
+  "originHash" : "4495793c28f1b7cab40d1bc50e8899503785303f31d8e438741950dd8fb0c9ff",
   "pins" : [
     {
       "identity" : "composed",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/opennetltd/Composed.git",
       "state" : {
-        "revision" : "694c835af89f4a9ba7e1c35132420a114b949b76",
-        "version" : "2.0.0-beta.2"
+        "branch" : "crash-fixes",
+        "revision" : "c9325bc4db1dddb0667e3807f3e974f9137b8fc9"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
