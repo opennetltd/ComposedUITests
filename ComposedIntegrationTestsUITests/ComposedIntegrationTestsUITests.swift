@@ -2322,7 +2322,24 @@ func AssertDisplayingCells(
     file: StaticString = #filePath,
     line: UInt = #line
 ) {
+    func firstStaticTextLabel(in snapshot: XCUIElementSnapshot) -> String? {
+        if snapshot.elementType == .staticText {
+            return snapshot.label
+        }
+        return snapshot.children.lazy.compactMap { firstStaticTextLabel(in: $0) }.first
+    }
+
     let collectionView = app.collectionViews.firstMatch
+    if scrollThroughContent {
+        let updatesCompleted = XCTNSPredicateExpectation(
+            predicate: NSPredicate(format: "value == %@", "updates-complete"),
+            object: collectionView,
+        )
+        guard XCTWaiter.wait(for: [updatesCompleted], timeout: 5) == .completed else {
+            XCTFail("The fixture did not finish updating and scrolling to the top", file: file, line: line)
+            return
+        }
+    }
     var allCellTexts: [String] = []
     var cellIDs: Set<String> = []
     var headerIDs: [String] = []
@@ -2334,19 +2351,34 @@ func AssertDisplayingCells(
     // top. Stable fixture identifiers distinguish reused views and survive section moves.
     for _ in 0..<(scrollThroughContent ? cellText.count + 1 : 1) {
         let previousCount = allCellTexts.count + headers.count + footers.count
-        let cells = collectionView.cells.allElementsBoundByIndex
+        // Index-bound elements resolve again when read and can disappear during layout.
+        // Read all attributes from the same immutable snapshot instead.
+        let snapshot: XCUIElementSnapshot
+        do {
+            snapshot = try collectionView.snapshot()
+        } catch {
+            XCTFail("Could not snapshot collection view: \(error)", file: file, line: line)
+            return
+        }
+        var descendants: [XCUIElementSnapshot] = []
+        var remaining = Array(snapshot.children.reversed())
+        while let element = remaining.popLast() {
+            descendants.append(element)
+            remaining.append(contentsOf: element.children.reversed())
+        }
+        let cells = descendants.filter { $0.elementType == .cell }
         if scrollThroughContent {
             for cell in cells where cellIDs.insert(cell.identifier).inserted {
-                allCellTexts.append(cell.staticTexts.firstMatch.label)
+                allCellTexts.append(firstStaticTextLabel(in: cell) ?? "")
             }
         } else {
-            allCellTexts = cells.map(\.staticTexts.firstMatch.label)
+            allCellTexts = cells.map { firstStaticTextLabel(in: $0) ?? "" }
         }
-        for header in collectionView.staticTexts.matching(NSPredicate(format: "identifier BEGINSWITH %@", "regression-header-")).allElementsBoundByIndex {
+        for header in descendants where header.elementType == .staticText && header.identifier.hasPrefix("regression-header-") {
             if headers[header.identifier] == nil { headerIDs.append(header.identifier) }
             headers[header.identifier] = header.label
         }
-        for footer in collectionView.staticTexts.matching(NSPredicate(format: "identifier BEGINSWITH %@", "regression-footer-")).allElementsBoundByIndex {
+        for footer in descendants where footer.elementType == .staticText && footer.identifier.hasPrefix("regression-footer-") {
             if footers[footer.identifier] == nil { footerIDs.append(footer.identifier) }
             footers[footer.identifier] = footer.label
         }
