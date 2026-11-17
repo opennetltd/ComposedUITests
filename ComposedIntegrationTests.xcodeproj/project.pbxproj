@@ -3,30 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D94A53BC2B98AC3B002A9A85 /* TestItemUpdatesWithSectionRemovals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A53BB2B98A914002A9A85 /* TestItemUpdatesWithSectionRemovals.swift */; };
-		D94A53BF2B98C7AA002A9A85 /* TestItemUpdatesWithSectionInserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A53BE2B98C7AA002A9A85 /* TestItemUpdatesWithSectionInserts.swift */; };
-		D94A53C12B98D255002A9A85 /* TestItemUpdatesWithSectionRemovalsAndInserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A53C02B98D255002A9A85 /* TestItemUpdatesWithSectionRemovalsAndInserts.swift */; };
-		D9928C182B717AFC00067EA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C172B717AFC00067EA9 /* AppDelegate.swift */; };
-		D9928C1A2B717AFC00067EA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C192B717AFC00067EA9 /* SceneDelegate.swift */; };
-		D9928C1C2B717AFC00067EA9 /* TestSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C1B2B717AFC00067EA9 /* TestSelectionViewController.swift */; };
-		D9928C212B717AFD00067EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9928C202B717AFD00067EA9 /* Assets.xcassets */; };
-		D9928C242B717AFD00067EA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9928C222B717AFD00067EA9 /* LaunchScreen.storyboard */; };
-		D9928C502B71810300067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C4F2B71810300067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift */; };
-		D9928C522B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C512B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift */; };
 		D9928C582B72C24800067EA9 /* Composed in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C572B72C24800067EA9 /* Composed */; };
 		D9928C5A2B72C24800067EA9 /* ComposedLayouts in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C592B72C24800067EA9 /* ComposedLayouts */; };
 		D9928C5C2B72C24800067EA9 /* ComposedUI in Frameworks */ = {isa = PBXBuildFile; productRef = D9928C5B2B72C24800067EA9 /* ComposedUI */; };
-		D99E251B2B7D30570013629B /* TestRemove_RemoveLast_ReloadLast_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E251A2B7D30570013629B /* TestRemove_RemoveLast_ReloadLast_ViewController.swift */; };
-		D99E251D2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99E251C2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift */; };
-		D9AC7B262B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AC7B252B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift */; };
-		D9D112902B9F1685006BA8A2 /* ComposedIntegrationTestsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9928C382B717AFD00067EA9 /* ComposedIntegrationTestsUITests.swift */; };
 		D9D112932B9F180E006BA8A2 /* ComposedDependant in Frameworks */ = {isa = PBXBuildFile; productRef = D9D112922B9F180E006BA8A2 /* ComposedDependant */; };
-		D9D50CB52C28A0CE008DA99D /* TestReloadHeaderCompositionalLayoutDuringBatchUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D50CB42C28A0CE008DA99D /* TestReloadHeaderCompositionalLayoutDuringBatchUpdates.swift */; };
-		D9D759A62B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D759A52B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,29 +24,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D94A53BB2B98A914002A9A85 /* TestItemUpdatesWithSectionRemovals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestItemUpdatesWithSectionRemovals.swift; sourceTree = "<group>"; };
-		D94A53BE2B98C7AA002A9A85 /* TestItemUpdatesWithSectionInserts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestItemUpdatesWithSectionInserts.swift; sourceTree = "<group>"; };
-		D94A53C02B98D255002A9A85 /* TestItemUpdatesWithSectionRemovalsAndInserts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestItemUpdatesWithSectionRemovalsAndInserts.swift; sourceTree = "<group>"; };
 		D9928C142B717AFC00067EA9 /* ComposedIntegrationTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComposedIntegrationTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9928C172B717AFC00067EA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9928C192B717AFC00067EA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D9928C1B2B717AFC00067EA9 /* TestSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSelectionViewController.swift; sourceTree = "<group>"; };
-		D9928C202B717AFD00067EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D9928C232B717AFD00067EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D9928C252B717AFD00067EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9928C382B717AFD00067EA9 /* ComposedIntegrationTestsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedIntegrationTestsUITests.swift; sourceTree = "<group>"; };
-		D9928C4F2B71810300067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift; sourceTree = "<group>"; };
-		D9928C512B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift; sourceTree = "<group>"; };
-		D9928C542B71B27300067EA9 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SampleCode.xcconfig; sourceTree = "<group>"; };
 		D99A038F2B9F13550022FA1E /* ComposedIntegrationTestsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ComposedIntegrationTestsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D99BA3F22B9B86B700CA5185 /* ComposedIntegrationTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = ComposedIntegrationTests.xctestplan; path = ComposedIntegrationTests.xcodeproj/ComposedIntegrationTests.xctestplan; sourceTree = "<group>"; };
-		D99E251A2B7D30570013629B /* TestRemove_RemoveLast_ReloadLast_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemove_RemoveLast_ReloadLast_ViewController.swift; sourceTree = "<group>"; };
-		D99E251C2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift; sourceTree = "<group>"; };
-		D9AC7B252B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift; sourceTree = "<group>"; };
 		D9D112912B9F1786006BA8A2 /* ComposedDependant */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ComposedDependant; sourceTree = "<group>"; };
-		D9D50CB42C28A0CE008DA99D /* TestReloadHeaderCompositionalLayoutDuringBatchUpdates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestReloadHeaderCompositionalLayoutDuringBatchUpdates.swift; sourceTree = "<group>"; };
-		D9D759A52B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRemove_ReloadLast_ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D9652E7E30AC6F61009F8F3D /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = D9928C132B717AFC00067EA9 /* ComposedIntegrationTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D9652E5430AC6F61009F8F3D /* ComposedIntegrationTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (D9652E7E30AC6F61009F8F3D /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ComposedIntegrationTests; sourceTree = "<group>"; };
+		D9652E8030AC6F66009F8F3D /* ComposedIntegrationTestsUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ComposedIntegrationTestsUITests; sourceTree = "<group>"; };
+		D9652E8330AC6F6B009F8F3D /* Configurations */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Configurations; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D9928C112B717AFC00067EA9 /* Frameworks */ = {
@@ -86,23 +68,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D94A53BA2B98A902002A9A85 /* Item Updates */ = {
-			isa = PBXGroup;
-			children = (
-				D94A53BE2B98C7AA002A9A85 /* TestItemUpdatesWithSectionInserts.swift */,
-				D94A53C02B98D255002A9A85 /* TestItemUpdatesWithSectionRemovalsAndInserts.swift */,
-				D94A53BB2B98A914002A9A85 /* TestItemUpdatesWithSectionRemovals.swift */,
-			);
-			path = "Item Updates";
-			sourceTree = "<group>";
-		};
 		D9928C0B2B717AFC00067EA9 = {
 			isa = PBXGroup;
 			children = (
 				D99BA3F22B9B86B700CA5185 /* ComposedIntegrationTests.xctestplan */,
-				D9928C532B71B25E00067EA9 /* Configurations */,
-				D9928C162B717AFC00067EA9 /* ComposedIntegrationTests */,
-				D9928C372B717AFD00067EA9 /* ComposedIntegrationTestsUITests */,
+				D9652E8330AC6F6B009F8F3D /* Configurations */,
+				D9652E5430AC6F61009F8F3D /* ComposedIntegrationTests */,
+				D9652E8030AC6F66009F8F3D /* ComposedIntegrationTestsUITests */,
 				D9D112912B9F1786006BA8A2 /* ComposedDependant */,
 				D9928C152B717AFC00067EA9 /* Products */,
 				D9928C482B717C5F00067EA9 /* Frameworks */,
@@ -118,64 +90,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D9928C162B717AFC00067EA9 /* ComposedIntegrationTests */ = {
-			isa = PBXGroup;
-			children = (
-				D9928C172B717AFC00067EA9 /* AppDelegate.swift */,
-				D9928C192B717AFC00067EA9 /* SceneDelegate.swift */,
-				D9928C1B2B717AFC00067EA9 /* TestSelectionViewController.swift */,
-				D9D50CB32C28A0A8008DA99D /* Compositional Layout */,
-				D9D759A42B86746200E31ABF /* Reload Last Items After Deletes */,
-				D94A53BA2B98A902002A9A85 /* Item Updates */,
-				D9928C4F2B71810300067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift */,
-				D9928C512B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift */,
-				D9928C202B717AFD00067EA9 /* Assets.xcassets */,
-				D9928C222B717AFD00067EA9 /* LaunchScreen.storyboard */,
-				D9928C252B717AFD00067EA9 /* Info.plist */,
-			);
-			path = ComposedIntegrationTests;
-			sourceTree = "<group>";
-		};
-		D9928C372B717AFD00067EA9 /* ComposedIntegrationTestsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D9928C382B717AFD00067EA9 /* ComposedIntegrationTestsUITests.swift */,
-			);
-			path = ComposedIntegrationTestsUITests;
-			sourceTree = "<group>";
-		};
 		D9928C482B717C5F00067EA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D9928C532B71B25E00067EA9 /* Configurations */ = {
-			isa = PBXGroup;
-			children = (
-				D9928C542B71B27300067EA9 /* SampleCode.xcconfig */,
-			);
-			path = Configurations;
-			sourceTree = "<group>";
-		};
-		D9D50CB32C28A0A8008DA99D /* Compositional Layout */ = {
-			isa = PBXGroup;
-			children = (
-				D9D50CB42C28A0CE008DA99D /* TestReloadHeaderCompositionalLayoutDuringBatchUpdates.swift */,
-			);
-			path = "Compositional Layout";
-			sourceTree = "<group>";
-		};
-		D9D759A42B86746200E31ABF /* Reload Last Items After Deletes */ = {
-			isa = PBXGroup;
-			children = (
-				D99E251A2B7D30570013629B /* TestRemove_RemoveLast_ReloadLast_ViewController.swift */,
-				D9D759A52B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift */,
-				D99E251C2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift */,
-				D9AC7B252B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift */,
-			);
-			path = "Reload Last Items After Deletes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +111,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				D9652E5430AC6F61009F8F3D /* ComposedIntegrationTests */,
 			);
 			name = ComposedIntegrationTests;
 			packageProductDependencies = (
@@ -216,6 +138,9 @@
 			);
 			dependencies = (
 				D99A03962B9F13550022FA1E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D9652E8030AC6F66009F8F3D /* ComposedIntegrationTestsUITests */,
 			);
 			name = ComposedIntegrationTestsUITests;
 			productName = ComposedIntegrationTestsUITests;
@@ -268,8 +193,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9928C242B717AFD00067EA9 /* LaunchScreen.storyboard in Resources */,
-				D9928C212B717AFD00067EA9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,19 +210,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9D759A62B86752500E31ABF /* TestRemove_ReloadLast_ViewController.swift in Sources */,
-				D9AC7B262B8371D7004A607C /* TestRemoveReconfigureHandlingOrderCollectionViewControllerManual.swift in Sources */,
-				D9D50CB52C28A0CE008DA99D /* TestReloadHeaderCompositionalLayoutDuringBatchUpdates.swift in Sources */,
-				D9928C522B71A2E200067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewControllerManual.swift in Sources */,
-				D94A53BC2B98AC3B002A9A85 /* TestItemUpdatesWithSectionRemovals.swift in Sources */,
-				D94A53BF2B98C7AA002A9A85 /* TestItemUpdatesWithSectionInserts.swift in Sources */,
-				D9928C1C2B717AFC00067EA9 /* TestSelectionViewController.swift in Sources */,
-				D99E251D2B7E791F0013629B /* TestRemoveReloadHandlingOrderCollectionViewControllerManual.swift in Sources */,
-				D9928C182B717AFC00067EA9 /* AppDelegate.swift in Sources */,
-				D9928C502B71810300067EA9 /* TestUpdateInsertUpdateRemoveUpdateCollectionViewController.swift in Sources */,
-				D9928C1A2B717AFC00067EA9 /* SceneDelegate.swift in Sources */,
-				D94A53C12B98D255002A9A85 /* TestItemUpdatesWithSectionRemovalsAndInserts.swift in Sources */,
-				D99E251B2B7D30570013629B /* TestRemove_RemoveLast_ReloadLast_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +217,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9D112902B9F1685006BA8A2 /* ComposedIntegrationTestsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,17 +229,6 @@
 			targetProxy = D99A03952B9F13550022FA1E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		D9928C222B717AFD00067EA9 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D9928C232B717AFD00067EA9 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D9928C3C2B717AFD00067EA9 /* Debug */ = {
