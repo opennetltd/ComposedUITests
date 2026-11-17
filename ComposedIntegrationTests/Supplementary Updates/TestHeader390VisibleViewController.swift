@@ -42,6 +42,14 @@ final class TestHeader390VisibleViewController: UICollectionViewController {
     @objc
     private func applyUpdates() {
         navigationItem.rightBarButtonItem?.isEnabled = false
+        CATransaction.begin()
+        CATransaction.setCompletionBlock { [weak self] in
+            guard let self else { return }
+            // Scrolling during the section animation can leave iOS 15 showing an empty viewport.
+            collectionView.layoutIfNeeded()
+            collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+            collectionView.accessibilityValue = "updates-complete"
+        }
         root.performBatchUpdates { _ in
             outcomes.headerText = "Updated market header"
             outcomes.performBatchUpdates { delegate in
@@ -51,7 +59,6 @@ final class TestHeader390VisibleViewController: UICollectionViewController {
             root.insert(market, at: 0)
             precedingSections.dropFirst(62).forEach { root.remove($0) }
         }
-        collectionView.layoutIfNeeded()
-        collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+        CATransaction.commit()
     }
 }
