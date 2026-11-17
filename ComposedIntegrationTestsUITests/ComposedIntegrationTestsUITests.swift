@@ -8,9 +8,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testComposedUpdateInsertUpdateRemoveUpdate_AllUpdates() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Update → Insert → Update → Remove → Update\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Update → Insert → Update → Remove → Update"].tap()
 
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["All Updates"].tap()
@@ -36,9 +38,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testComposedUpdateInsertUpdateRemoveUpdate_OmitFinalUpdate() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Update → Insert → Update → Remove → Update\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Update → Insert → Update → Remove → Update"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["All Updates (omit final update)"].tap()
 
@@ -63,9 +67,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testComposedUpdateInsertUpdateRemoveUpdate_OmitFinalDeleteAndUpdate() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Update → Insert → Update → Remove → Update\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Update → Insert → Update → Remove → Update"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["All Updates (omit final delete and update)"].tap()
 
@@ -91,9 +97,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testComposedUpdateInsertUpdateRemoveUpdate_OmitFinalDeletesAndUpdate() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Update → Insert → Update → Remove → Update\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Update → Insert → Update → Remove → Update"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["All Updates (omit final deletes and update)"].tap()
 
@@ -120,9 +128,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testManualUpdateInsertUpdateRemoveUpdate_AllUpdates() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Manual] Update → Insert → Update → Remove → Update\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Manual] Update → Insert → Update → Remove → Update"].tap()
 
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["All Updates"].tap()
@@ -148,9 +158,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testManualUpdateInsertUpdateRemoveUpdate_OmitFinalUpdate() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Manual] Update → Insert → Update → Remove → Update\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Manual] Update → Insert → Update → Remove → Update"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["All Updates (omit final update)"].tap()
 
@@ -175,9 +187,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testManualUpdateInsertUpdateRemoveUpdate_OmitFinalDeleteAndUpdate() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Manual] Update → Insert → Update → Remove → Update\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Manual] Update → Insert → Update → Remove → Update"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["All Updates (omit final delete and update)"].tap()
 
@@ -203,9 +217,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testManualUpdateInsertUpdateRemoveUpdate_OmitFinalDeletesAndUpdate() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Manual] Update → Insert → Update → Remove → Update\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Manual] Update → Insert → Update → Remove → Update"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["All Updates (omit final deletes and update)"].tap()
 
@@ -232,9 +248,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testItemUpdatesWithSectionRemovals_1Update() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Item Reloads → Section Removals\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Removals"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["Apply First (1) update(s)"].tap()
 
@@ -257,9 +275,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testItemUpdatesWithSectionRemovals_2Updates() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Item Reloads → Section Removals\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Removals"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["Apply First (2) update(s)"].tap()
 
@@ -282,9 +302,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testItemUpdatesWithSectionRemovals_3Updates() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Item Reloads → Section Removals\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Removals"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["Apply First (3) update(s)"].tap()
 
@@ -305,9 +327,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testItemUpdatesWithSectionRemovals_4Updates() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Item Reloads → Section Removals\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Removals"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["Apply First (4) update(s)"].tap()
 
@@ -326,9 +350,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testItemUpdatesWithSectionRemovals_AllUpdates() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Item Reloads → Section Removals\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Removals"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["Apply All Updates"].tap()
 
@@ -345,9 +371,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testItemUpdatesWithSectionInserts_1Update() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Item Reloads → Section Inserts\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Inserts"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["Apply First (1) update(s)"].tap()
 
@@ -366,9 +394,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testItemUpdatesWithSectionInserts_2Updates() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Item Reloads → Section Inserts\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Inserts"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["Apply First (2) update(s)"].tap()
 
@@ -387,9 +417,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testItemUpdatesWithSectionInserts_3Updates() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Item Reloads → Section Inserts\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Inserts"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["Apply First (3) update(s)"].tap()
 
@@ -410,9 +442,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testItemUpdatesWithSectionInserts_4Updates() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Item Reloads → Section Inserts\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Inserts"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["Apply First (4) update(s)"].tap()
 
@@ -435,9 +469,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testItemUpdatesWithSectionInserts_5Updates() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Item Reloads → Section Inserts\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Inserts"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["Apply First (5) update(s)"].tap()
 
@@ -462,9 +498,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testItemUpdatesWithSectionInserts_AllUpdates() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Item Reloads → Section Inserts\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Item Reloads → Section Inserts"].tap()
         app.navigationBars.buttons["Apply..."].tap()
         app.buttons["Apply All Updates"].tap()
 
@@ -490,9 +528,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testRemove_RemoveLast_ReloadLast_Composed() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Composed] Remove, Remove Last, Reload Last\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Composed] Remove, Remove Last, Reload Last"].tap()
         app.navigationBars.firstMatch.buttons["Apply"].tap()
 
         AssertDisplayingCells(
@@ -507,9 +547,12 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testRemove_ReloadLast_Composed() throws {
         let app = XCUIApplication()
+        app.launchArguments = [
+            "-StartingTest",
+            "\"[Composed] Remove, Reload Last\"",
+        ]
         app.launch()
 
-        app.collectionViews.cells.staticTexts["[Composed] Remove, Reload Last"].tap()
         app.navigationBars.firstMatch.buttons["Apply"].tap()
 
         AssertDisplayingCells(
@@ -524,9 +567,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
 
     func testRemove_ReloadLast_Manual() throws {
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Manual] Remove, Reload Last\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Manual] Remove, Reload Last"].tap()
         app.navigationBars.firstMatch.buttons["Apply"].tap()
 
         // This validates that the bug was introduced in iOS 15 (which is when the reconfigure API
@@ -558,9 +603,11 @@ final class ComposedIntegrationTestsUITests: XCTestCase {
         }
 
         let app = XCUIApplication()
+        app.launchArguments += [
+            "-StartingTest",
+            "\"[Manual] Remove, Reconfigure Last\"",
+        ]
         app.launch()
-
-        app.collectionViews.cells.staticTexts["[Manual] Remove, Reconfigure Last"].tap()
         app.navigationBars.firstMatch.buttons["Apply"].tap()
 
         // This is not the outcome we want but validates the understanding of the API (that items
