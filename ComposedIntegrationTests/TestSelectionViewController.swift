@@ -23,6 +23,10 @@ final class TestSelectionViewController: UICollectionViewController {
 
         let rootSection = ComposedTestsSection(elements: [
             ComposedTest(
+                title: "[Compositional] Reload Header During Batch Updates",
+                viewControllerFactory: TestReloadHeaderCompositionalLayoutDuringBatchUpdates()
+            ),
+            ComposedTest(
                 title: "[Composed] Update → Insert → Update → Remove → Update",
                 viewControllerFactory: TestUpdateInsertUpdateRemoveUpdateCollectionViewController()
             ),
@@ -64,8 +68,6 @@ final class TestSelectionViewController: UICollectionViewController {
             self.navigationController?.pushViewController(viewController, animated: true)
         }
         collectionCoordinator = CollectionCoordinator(collectionView: collectionView, sections: rootSection)
-
-        print(UserDefaults.standard.dictionaryRepresentation())
 
         // "StartingTest" is passed as an argument so use UserDefaults to parse it.
         if let startingTestTitle = UserDefaults.standard.string(forKey: "StartingTest") {
