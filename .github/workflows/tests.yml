@@ -135,6 +135,9 @@ jobs:
 
           echo "SIMULATOR_DESTINATION=platform=iOS Simulator,id=$SIMULATOR_DESTINATION" >> $GITHUB_ENV
 
+          # Attempt to boot to ensure it's valid. Also reduces the delay of Xcode waiting for the simulator?
+          xcrun simctl bootstatus "$SIMULATOR_DESTINATION" -b
+
       - name: Populate SIMULATOR_DESTINATION
         if: ${{ !matrix.platform-requires-installation }}
         run: echo "SIMULATOR_DESTINATION=platform=iOS Simulator,name=${{ matrix.device }},OS=${{ matrix.ios-version }}" >> $GITHUB_ENV
@@ -166,4 +169,4 @@ jobs:
 
       - name: Run Tests
         run: |
-          set -o pipefail && xcodebuild test -verbose -scheme ComposedIntegrationTests -destination "$SIMULATOR_DESTINATION" 2>&1 | $(mint which xcbeautify) --renderer github-actions
+          set -o pipefail && xcodebuild test -verbose -scheme ComposedIntegrationTests -destination "$SIMULATOR_DESTINATION" 2>&1 | $(mint which xcbeautify) --renderer github-actions --preserve-unbeautified
