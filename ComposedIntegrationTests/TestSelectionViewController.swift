@@ -23,6 +23,102 @@ final class TestSelectionViewController: UICollectionViewController {
 
         let rootSection = ComposedTestsSection(elements: [
             ComposedTest(
+                title: "[Composed] Item Removal → Surrounding Section Removals",
+                viewControllerFactory: TestItemRemovalThenSurroundingSectionRemovalsViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Insert → Refresh Footer",
+                viewControllerFactory: TestInsertThenFooterViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Insert → Refresh Footer → Cancel Insert",
+                viewControllerFactory: TestInsertThenFooterThenRemoveInsertedViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Resize Footer",
+                viewControllerFactory: TestFooterResizeViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Refresh Footer",
+                viewControllerFactory: TestFooterOnlyViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Refresh Footer → Remove Sections",
+                viewControllerFactory: TestFooterThenRemoveViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Refresh Footer → Move → Remove Sections",
+                viewControllerFactory: TestFooterThenMoveAndRemoveViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Insert → Refresh Footer → Move → Remove",
+                viewControllerFactory: TestInsertThenFooterThenMoveAndRemoveViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Footer 390 → 63 Sections (Visible)",
+                viewControllerFactory: TestFooter390VisibleViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Footer 390 → 63 Sections (Offscreen)",
+                viewControllerFactory: TestFooter390OffscreenViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Refresh Footer Outside Batch",
+                viewControllerFactory: TestFooterOutsideBatchViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Refresh Footer → Remove Containing Section",
+                viewControllerFactory: TestFooterThenRemoveContainingSectionViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Insert → Refresh Header",
+                viewControllerFactory: TestInsertThenHeaderViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Insert → Refresh Header → Cancel Insert",
+                viewControllerFactory: TestInsertThenHeaderThenRemoveInsertedViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Resize Header",
+                viewControllerFactory: TestHeaderResizeViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Refresh Header",
+                viewControllerFactory: TestHeaderOnlyViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Refresh Header → Remove Sections",
+                viewControllerFactory: TestHeaderThenRemoveViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Refresh Header → Move → Remove Sections",
+                viewControllerFactory: TestHeaderThenMoveAndRemoveViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Insert → Refresh Header → Move → Remove",
+                viewControllerFactory: TestInsertThenHeaderThenMoveAndRemoveViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Header 390 → 63 Sections (Visible)",
+                viewControllerFactory: TestHeader390VisibleViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Header 390 → 63 Sections (Offscreen)",
+                viewControllerFactory: TestHeader390OffscreenViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Refresh Header Outside Batch",
+                viewControllerFactory: TestHeaderOutsideBatchViewController()
+            ),
+            ComposedTest(
+                title: "[Composed] Refresh Header → Remove Containing Section",
+                viewControllerFactory: TestHeaderThenRemoveContainingSectionViewController()
+            ),
+            ComposedTest(
+                title: "[Compositional] Reload Header During Batch Updates",
+                viewControllerFactory: TestReloadHeaderCompositionalLayoutDuringBatchUpdates()
+            ),
+            ComposedTest(
                 title: "[Composed] Update → Insert → Update → Remove → Update",
                 viewControllerFactory: TestUpdateInsertUpdateRemoveUpdateCollectionViewController()
             ),
@@ -64,8 +160,6 @@ final class TestSelectionViewController: UICollectionViewController {
             self.navigationController?.pushViewController(viewController, animated: true)
         }
         collectionCoordinator = CollectionCoordinator(collectionView: collectionView, sections: rootSection)
-
-        print(UserDefaults.standard.dictionaryRepresentation())
 
         // "StartingTest" is passed as an argument so use UserDefaults to parse it.
         if let startingTestTitle = UserDefaults.standard.string(forKey: "StartingTest") {
