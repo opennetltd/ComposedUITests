@@ -35,17 +35,18 @@ jobs:
             ios-version: "16.0"
             platform-requires-installation: true
             device: "iPhone 14"
-          - os: "macos-27"
+          - os: "xcode-27"
             xcode: "27.2"
             ios-version: "17.0"
             platform-requires-installation: true
             device: "iPhone 15"
-          - os: "macos-27"
-            xcode: "27.2"
+          # This could use Xcode 27.2 but some SDKs fail to download from the CLI. See https://developer.apple.com/forums/thread/847134
+          - os: "macos-26"
+            xcode: "26.6"
             ios-version: "18.0"
             platform-requires-installation: true
             device: "iPhone 16"
-          - os: "macos-27"
+          - os: "xcode-27"
             xcode: "27.2"
             ios-version: "26.0"
             platform-requires-installation: true
@@ -54,11 +55,11 @@ jobs:
             xcode: "26.2"
             ios-version: "26.2"
             device: "iPhone 17"
-          - os: "macos-27"
+          - os: "xcode-27"
             xcode: "27.0"
             ios-version: "27.0"
             device: "iPhone 18 Pro"
-          - os: "macos-27"
+          - os: "xcode-27"
             xcode: "27.2"
             ios-version: "27.2"
             device: "iPhone 18 Pro"
@@ -104,13 +105,34 @@ jobs:
         env:
             IOS_VERSION: ${{ matrix.ios-version }}
         run: |
+          xcodes runtimes
           sudo xcodes runtimes install "iOS ${{ matrix.ios-version }}"
           echo "IOS_RUNTIME=com.apple.CoreSimulator.SimRuntime.iOS-${IOS_VERSION/\./-}" >> $GITHUB_ENV
 
       - name: Create ${{ matrix.device }} (${{ matrix.ios-version }}) Simulator
         if: ${{ matrix.platform-requires-installation }}
+        env:
+          DEVICE: ${{ matrix.device }}
         run: |
-          SIMULATOR_DESTINATION=$(xcrun simctl create "${{ matrix.device }}" "${{ matrix.device }}" "$IOS_RUNTIME")
+          set -euo pipefail
+
+          echo "Device: $DEVICE"
+          echo "Runtime: $IOS_RUNTIME"
+
+          if SIMULATOR_DESTINATION=$(xcrun simctl create "$DEVICE" "$DEVICE" "$IOS_RUNTIME"); then
+            echo "Created simulator: $SIMULATOR_DESTINATION"
+          else
+            status=$?
+            echo "::error::simctl create failed with exit code $status"
+            exit "$status"
+          fi
+
+          if [[ -z "$SIMULATOR_DESTINATION" ]]; then
+            xcrun simctl list devices available
+            echo "::error::simctl create succeeded but returned no UUID"
+            exit 1
+          fi
+
           echo "SIMULATOR_DESTINATION=platform=iOS Simulator,id=$SIMULATOR_DESTINATION" >> $GITHUB_ENV
 
       - name: Populate SIMULATOR_DESTINATION
